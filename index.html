@@ -9,7 +9,7 @@ css: ["index.css"]
             <div class="card-content" style="background-color:#699">
                 <span id="post-title" class="card-title">{{post.title}}</span>
                 <p id="post-date">
-                    <i class="material-icons icon-date-range">date_range</i>
+                    <i class="material-icons">date_range</i>
                     {{post.date | date: "%d/%m/%Y %H:%M"}}
                 </p>
                 <p id="post-content">{{post.excerpt | remove: '<p>' | remove: '</p>'}}</p>
@@ -34,7 +34,7 @@ css: ["index.css"]
                         {% else %}
                         <a href="#!">
                             {% endif %}
-                            <i class="material-icons icon-chevron-left">chevron_left</i>
+                            <i class="material-icons">chevron_left</i>
                         </a>
             </li>
             {% if paginator.page == 1 %}
@@ -58,7 +58,7 @@ css: ["index.css"]
                     {% else %}
                     <a href="#!">
                         {% endif %}
-                        <i class="material-icons icon-chevron-right">chevron_right</i>
+                        <i class="material-icons">chevron_right</i>
                     </a>
             </li>
         </ul>

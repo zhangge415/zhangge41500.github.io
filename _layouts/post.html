@@ -14,16 +14,16 @@ js: ["post.js"]
         <li>
             <div class="collapsible-header">
                 <span>
-                    <i class="material-icons icon-date-range tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+                    <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
                     {{page.date | date: "%d/%m/%Y %H:%M"}}<br />
                     <div id="busuanzi_container_site_pv">点击量：<span style="display: inline;" id="busuanzi_value_page_pv"></span>次</div>
-                    <i id="indicate" class="right material-icons icon-info tooltipped" data-position="left" data-delay="30"
+                    <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30"
                         data-tooltip="Show extra info">info</i>
                 </span>
             </div>
             <div class="collapsible-body">
                 <span>
-                    <i class="material-icons icon-sort tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+                    <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
                     {% for cat in page.categories %}
                     {% capture test %}{{cat | slice: 0}}{% endcapture %}
                     {% capture testup %}{{cat | slice: 0 | upcase}}{% endcapture %}
@@ -34,7 +34,7 @@ js: ["post.js"]
                     {% endfor %}
                 </span>
                 <span>
-                    <i class="material-icons icon-label tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+                    <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
                     {% for tag in page.tags %}
                     {% capture test %}{{tag | slice: 0}}{% endcapture %}
                     {% capture testup %}{{tag | slice: 0 | upcase}}{% endcapture %}
