@@ -7,7 +7,7 @@ excerpt: 编程中的范式的介绍与区分
 ---
 很多语言是**聚范式/多重范式**编程，即支持多在编程范式，如面向对象(Java)，面向过程(C语言)，泛函(函数式)，元程序设计等；以下例子都用 **JavaScript** 举例；
 
-#### 命令式编程(Imperative)
+# 命令式编程(Imperative)
 如命令一般指导程序一步步完成功能，如 for 循环：
 ```js
 function myFn(n) {
@@ -19,7 +19,7 @@ function myFn(n) {
 myFn(0);  // 3
 ```
 
-#### 函数式编程/声明式(Functional/Declarative)
+# 函数式编程/声明式(Functional/Declarative)
 
 **函数式编程特点：**
 - 函数式编程是声明式的；
@@ -112,7 +112,7 @@ console.log(factorial(3));  // 3 x 2 x 1 = 6
 
 **.map() .reduce()**等 也是申明式编程函数；
 
-#### 函数合成
+# 函数合成
 一个值变成另一个值，中间经过多个函数，将多个函数合并为一个函数来实现；
 
 举个例子：
@@ -144,7 +144,7 @@ function fFn(x) {
 console.log(fFn(1));  // 5
 ```
 
-#### 函数柯理化(Currying)
+# 函数柯理化(Currying)
 以逻辑学家***Haskell Curry***命名，即使接收多个参数的函数变成接受单个参数的函数的过程。单参数会使函数合成更简单；
 
 例如：

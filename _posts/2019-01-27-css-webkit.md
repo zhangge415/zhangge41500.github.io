@@ -9,16 +9,16 @@ CSS3中一些新功能也是目前导致各大浏览器不兼容的一个原因�
 
 下面就是我们经常用到的前缀及其兼容浏览器：
 
-#### -webkit-
+## -webkit-
 Apple Webkit团队，兼容Android, Safari, Chrome, BlackBerry等；
 
-#### -moz-
+## -moz-
 Mozilla，兼容Firefox等;
 
-#### -ms-
+## -ms-
 Microsoft基金会，兼容IE;
 
-#### -o-
+## -o-
 兼容Opera, Opera Mini, Opera Mobile;
 
 因此对于一些较新的css3特性，需要添加以上前缀兼容每个浏览器，例如实现线性渐变，标准写法是 `linear-gradient()`，但是一下浏览器还未完全确定这一特性，就在前面添加一个前缀来进行试验执行，如 `-webkit-linear-gradient`；

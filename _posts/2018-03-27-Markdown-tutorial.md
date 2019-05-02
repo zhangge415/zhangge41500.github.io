@@ -7,7 +7,7 @@ excerpt: 简要markdown语法
 ---
 ---------
 
-## 目录 <span id="home">
+# 目录 <span id="home">
 
 * **[Markdown简明语法](#1)**
 	* **[Markdown及扩展](#1.1)**
@@ -22,7 +22,7 @@ excerpt: 简要markdown语法
 
 ---------
 
-## Markdown简明语法<span id="1">
+# Markdown简明语法<span id="1">
 
 - **Markdown和扩展Markdown简洁的语法**
 - **代码块高亮**
@@ -33,7 +33,7 @@ excerpt: 简要markdown语法
 
 -------------------
 
-### Markdown及扩展 <span id="1.1">
+## Markdown及扩展 <span id="1.1">
 
 > Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。    —— <a href="https://zh.wikipedia.org/wiki/Markdown" target="_blank"> [ 维基百科 ]
 
@@ -41,7 +41,7 @@ excerpt: 简要markdown语法
 
 本编辑器支持 **Markdown Extra** , 　扩展了很多好用的功能。具体请参考[Github][2].  
 
-#### 表格 <span id="1.1.1">
+### 表格 <span id="1.1.1">
 
 **Markdown　Extra**　表格语法：
 
@@ -59,7 +59,7 @@ Pipe     | $1
 | Phone     |   12 元 |  12  |
 | Pipe      |    1 元 | 234  |
 
-#### 插入图片 <span id="1.1.2">
+### 插入图片 <span id="1.1.2">
  >格式一：
  
 ``` markdown
@@ -72,7 +72,7 @@ Pipe     | $1
 <img src="http://xxx.com/xxx.png" alt="download-failed" width="XXXpx"  height="XXXpx">
 ```
 
-#### 定义列表 <span id="1.1.3">
+### 定义列表 <span id="1.1.3">
 
 **Markdown　Extra**　定义列表语法：
 项目１
@@ -87,7 +87,7 @@ Pipe     | $1
 
 	> 定义D内容
 
-#### 代码块 <span id="1.1.4">
+### 代码块 <span id="1.1.4">
 代码块语法遵循标准markdown代码，例如：
 >python:
 
@@ -116,13 +116,13 @@ class SomeClass:
 
 ```
 
-#### 脚注  <span id="1.1.5">
+### 脚注  <span id="1.1.5">
 
 生成一个脚注[^footnote].
   [^footnote]: 这里是 **脚注** 的 *内容*.
   
 
-#### 数学公式  <span id="1.1.6">
+### 数学公式  <span id="1.1.6">
 使用MathJax渲染*LaTex* 数学公式，详见[math.stackexchange.com][1].
 
  - 行内公式，数学公式为：$\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$。
@@ -132,7 +132,7 @@ $$	x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
 
 更多LaTex语法请参考 [这儿][3].
 
-### 浏览器兼容 <span id="1.2">
+## 浏览器兼容 <span id="1.2">
 
  1. 目前，本编辑器对Chrome浏览器支持最为完整。建议大家使用较新版本的Chrome。
  3. IE９以下不支持
@@ -141,7 +141,7 @@ $$	x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
     1. IE9不支持文件导入导出
     1. IE10不支持拖拽文件导入
 
-### 常用Markdown编辑器推荐 <span id="1.3">
+## 常用Markdown编辑器推荐 <span id="1.3">
 
 1. **Markdownpad**： 详情请点击 [官网](http://markdownpad.com/)。
 （貌似专业版需要收取一定dollars$，需要序列号自行baidu。）
@@ -155,7 +155,7 @@ $$	x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
 
 ------
 
-## **返回[顶部](#home)**
+# **返回[顶部](#home)**
 
 ---------
 

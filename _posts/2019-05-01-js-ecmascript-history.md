@@ -5,6 +5,7 @@ categories: JavaScript
 tags: es6 ECMAScript
 excerpt: ECMAScript发展简史总结
 ---
+
 > ECMAScript，简称 ES，是 JavaScript 的标准版，经历了不同版本的变化；
 
 - 最初由于网速慢，网页验证表单需要通过服务器完成，因此Netscape（网景）公司决定开发这样一种用于处理验证的客户端语言；

@@ -9,7 +9,7 @@ CSS是个很强大的网页开发工具，使生硬的网页变得丰富绚丽�
 
 下面根据几何顺序依次来实现一下：
 
-### 圆形
+# 圆形
 
 <html>
 <div style="border:1px solid green;
@@ -47,7 +47,7 @@ padding:10px;">
 </html>
 ```
 
-### 椭圆形
+# 椭圆形
 
 <html>
 <div style="border:1px solid green;
@@ -87,7 +87,7 @@ padding:10px;">
 </html>
 ```
 
-### 三边形
+# 三边形
 
 <html>
 <div style="border:1px solid green;
@@ -143,7 +143,7 @@ padding:10px">
 </html>
 ```
 
-### 矩形
+# 矩形
 
 <html>
 <div style="border:1px solid green;
@@ -157,7 +157,7 @@ padding:10px">
 
 最简单的形状，就不分析了；
 
-### 梯形
+# 梯形
 
 <html>
 <div style="border:1px solid green;
@@ -196,7 +196,7 @@ padding:10px">
 </html>
 ```
 
-### 平行四边形
+# 平行四边形
 
 <html>
 <div style="border:1px solid green;
@@ -262,7 +262,7 @@ div {
 
 **注意：** 两个 `<div>` 标签之间如果有**换行**或者空格的话，最终两个块图形间会出现一条**细缝**，所以写的时候就要避免换行，或者像上面一样把换行**注释掉**；
 
-### 五边形
+# 五边形
 
 <html>
 <div style="border:1px solid green;
@@ -316,7 +316,7 @@ padding:10px">
 
 更多边的形状基本思路都一样，想着用三角形，矩形，梯形这些基本形象进行组合基本上都能实现，下面的形状就只放形状和源码了；
 
-### 五角星
+# 五角星
 
 <html>
 <div style="border:1px solid green;
@@ -388,7 +388,7 @@ padding:10px">
 </html>
 ```
 
-### 六边形
+# 六边形
 
 <html>
 <div style="border:1px solid green;

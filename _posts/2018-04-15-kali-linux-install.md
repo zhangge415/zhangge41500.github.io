@@ -5,7 +5,7 @@ categories: Linux
 tags: kali系统安装 linux 虚拟机安装 VMware
 excerpt: Kali Linux系统在虚拟机上的详细图文安装教程
 ---
-### 目录 <span id="home">
+# 目录 <span id="home">
 * [一、Kali Linux 介绍](#1)
 	* [1、Linux](#1.1)
 	* [2、Kali](#1.2)
@@ -15,9 +15,9 @@ excerpt: Kali Linux系统在虚拟机上的详细图文安装教程
 * [三、Kali系统安装与配置](#3)
 
 -------------
-### 一、Kali Linux 介绍 <span id="1">
+# 一、Kali Linux 介绍 <span id="1">
 
-#### 1、Linux <span id="1.1">
+## 1、Linux <span id="1.1">
 
 ![timg2.jpg](https://i.loli.net/2018/04/15/5ad333eb8df19.jpg)
 引用一下[百度百科][linux]：
@@ -30,19 +30,19 @@ Linux有多个发行版本，以下是[官网][linux.org]提供下载的一些�
 
 ---------------------
 
-#### 2、Kali <span id="1.2">
+## 2、Kali <span id="1.2">
 
 ![timg.jpg](https://i.loli.net/2018/04/15/5ad3332fef322.jpg)
 
 kali是linux其中一个发行版，基于Debian，前身是BackTrack（简称BT系统）。kali系统内置大量渗透测试软件，黑客工具箱已不足以形容它，可以说是巨大的渗透系统，涵盖了多个领域，如无线网络、数字取证、服务器、密码、系统漏洞等等，知名软件有：wireshark、aircrack-ng、nmap、hashcat、metasploit-framework(msf)。
 
-### 二、虚拟机软安装与配置 <span id="2">
+# 二、虚拟机软安装与配置 <span id="2">
 
-#### 1、下载 <span id="2.1">
+## 1、下载 <span id="2.1">
 这里将详细介绍在Windows虚拟机中安装kali linux，使用的虚拟机软件是 **VMware**，可以去[官网下载][vmware]最新版本，**注意：** VMware 10.0版本之后只支持**64位**系统，如果是32位系统用户需要下载10.0及之前的版本。
 然后下载发型版的kali linux，[官网下载][kali-download]，根据自己情况选择下载32位或64位，完整版或者轻便版，这里我下载的64位完整版。
 
-####  1、安装配置 <span id="2.2">
+##  1、安装配置 <span id="2.2">
 接下来一步步安装：
 ![20180415144118372.jpg](https://i.loli.net/2018/04/15/5ad33ed9b4f7a.jpg)
 选择安装位置，注意保证空间充足：
@@ -95,7 +95,7 @@ kali是linux其中一个发行版，基于Debian，前身是BackTrack（简称BT
 
 虚拟机配置完成，接下来开始安装 kali 系统。
 
-### 三、Kali系统安装与配置 <span id="3">
+# 三、Kali系统安装与配置 <span id="3">
 
 点击启动虚拟机：
 ![20180415152337260.jpg](https://i.loli.net/2018/04/15/5ad33f94edca2.jpg)
@@ -186,7 +186,7 @@ kali是linux其中一个发行版，基于Debian，前身是BackTrack（简称BT
 
 ![20180415185813698.jpg](https://i.loli.net/2018/04/15/5ad343e7ef4bf.jpg)
 
-### 返回[顶部](#home)
+# 返回[顶部](#home)
 
 -----------------------
 [linux]:https://baike.baidu.com/item/linux/27050?fr=aladdin
