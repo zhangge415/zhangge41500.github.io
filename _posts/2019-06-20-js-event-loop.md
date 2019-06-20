@@ -1,5 +1,5 @@
 ---
-title: Javascript事件循环
+title: JavaScript事件循环
 layout: post
 categories: JavaScript
 tags: event-loop 事件循环 堆栈
