@@ -69,6 +69,28 @@ console.log(0 in arr3, 1 in arr3);
 
 细想一下，js 这样处理的原因多半是去除不必要的性能开销，当数组相当大时，可以避免处理一些未初始化的值，但这样也同时使得开发中会出现一些问题，所以应尽量避免；
 
+举个例子来查看一下性能如何：
+```js
+console.time('one');
+// 密集数组
+Array(...Array(1e5)).forEach(function(){
+    ;
+});
+console.timeEnd('one');
+
+console.time('two');
+// 稀疏数组
+Array(1e5).forEach(function(){
+    ;
+});
+console.timeEnd('two');
+
+// one: 26.3759765625ms
+// two: 5.701171875ms
+```
+
+可以看出在处理较大数组时，稀疏数组确实能降低不少性能开销；
+
 # 密集数组
 
 ## 概念
