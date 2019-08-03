@@ -135,7 +135,8 @@ var searchValue = '',
     arrLinks = [],
     arrTitles = [],
     arrResults = [],
-    indexItem = [];
+    indexItem = [],
+    itemLength = 0;
 var tmpDiv = document.createElement('div');
 tmpDiv.className = 'result-item';
 
@@ -145,12 +146,17 @@ xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
         xml = xhr.responseXML;
         arrItems = xml.getElementsByTagName('item');
+        itemLength = arrItems.length;
         
         // 遍历并保存所有文章对应的标题、链接、内容到对应的数组中
-        for (i = 0; i < arrItems.length; i++) {
-            arrContents[i] = arrItems[i].getElementsByTagName('description')[0].childNodes[0].nodeValue;
-            arrLinks[i] = arrItems[i].getElementsByTagName('link')[0].childNodes[0].nodeValue.replace(/\s+/g, '');
-            arrTitles[i] = arrItems[i].getElementsByTagName('title')[0].childNodes[0].nodeValue;
+        // 同时过滤掉 HTML 标签
+        for (i = 0; i < itemLength; i++) {
+            arrContents[i] = arrItems[i].getElementsByTagName('description')[0].
+                childNodes[0].nodeValue.replace(/<.*?>/g, '');
+            arrLinks[i] = arrItems[i].getElementsByTagName('link')[0].
+                childNodes[0].nodeValue.replace(/<.*?>/g, '');
+            arrTitles[i] = arrItems[i].getElementsByTagName('title')[0].
+                childNodes[0].nodeValue.replace(/<.*?>/g, '');
         }
     }
 }
@@ -184,18 +190,17 @@ function searchConfirm() {
         searchResults.style.display = 'none';
         searchClear.style.display = 'none';
     } else if (searchInput.value.search(/^\s+$/) >= 0) {
-    
         // 检测输入值全是空白的情况
         searchInit();
         var itemDiv = tmpDiv.cloneNode(true);
         itemDiv.innerText = '请输入有效内容...';
         searchResults.appendChild(itemDiv);
     } else {
-    
         // 合法输入值的情况
         searchInit();
         searchValue = searchInput.value;
-        searchMatching(arrContents, searchValue);
+        // 在标题、内容中查找
+        searchMatching(arrTitles, arrContents, searchValue);
     }
 }
 
@@ -208,14 +213,22 @@ function searchInit() {
     searchClear.style.display = 'block';
 }
 
-function searchMatching(arr, input) {
-
-    // 在所有文章内容中匹配查询值
-    for (i = 0; i < arr.length; i++) {
-        if (arr[i].search(input) != -1) {
-            indexItem.push(i);
+function searchMatching(arr1, arr2, input) {
+    // 忽略输入大小写
+    input = new RegExp(input, 'i');
+    // 在所有文章标题、内容中匹配查询值
+    for (i = 0; i < itemLength; i++) {
+        if (arr1[i].search(input) !== -1 || arr2[i].search(input) !== -1) {
+            // 优先搜索标题
+            if (arr1[i].search(input) !== -1) {
+                var arr = arr1;
+            } else {
+                var arr = arr2;
+            }
+            indexItem.push(i);  // 保存匹配值的索引
             var indexContent = arr[i].search(input);
-            var l = input.length;
+            // 此时 input 为 RegExp 格式 /input/i，转换为原 input 字符串长度
+            var l = input.toString().length - 3;
             var step = 10;
             
             // 将匹配到内容的地方进行黄色标记，并包括周围一定数量的文本
