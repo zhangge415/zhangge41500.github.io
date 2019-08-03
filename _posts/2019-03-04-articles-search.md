@@ -169,7 +169,10 @@ searchClear.onclick = function(){
 }
 
 // 输入框内容变化后就开始匹配，可以不用点按钮
-searchInput.onkeydown = function () {
+// 经测试，onkeydown, onchange 等方法效果不太理想，
+// 存在输入延迟等问题，最后发现触发 input 事件最理想，
+// 并且可以处理中文输入法拼写的变化
+searchInput.oninput = function () {
     setTimeout(searchConfirm, 0);
 }
 searchInput.onfocus = function () {

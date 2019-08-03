@@ -34,7 +34,7 @@ searchClear.onclick = function(){
     searchResults.style.display = 'none';
     searchClear.style.display = 'none';
 }
-searchInput.onkeydown = function () {
+searchInput.oninput = function () {
     setTimeout(searchConfirm, 0);
 }
 searchInput.onfocus = function () {
