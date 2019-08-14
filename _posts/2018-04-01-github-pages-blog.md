@@ -5,6 +5,7 @@ tags: github-pages jekyll
 categories: 网站
 excerpt: Jekyll搭建Github Pages个人博客
 ---
+
 # 目录 <span id="home">
 
 * [引言](#1)
@@ -29,7 +30,6 @@ excerpt: Jekyll搭建Github Pages个人博客
 	* [图床介绍](#7.3)
 	* [关于图片尺寸](#7.4)
 * [域名配置](#8)
-
 
 ---------------
 
@@ -233,15 +233,15 @@ git merge master
 
 ## 关于Jekyll <span id="6.1">
 
-Jekyll是一个简单免费的生成博客网页的工具，可以绑定github，详情参考官网：<https://jekyllrb.com/>, 也有一个中文版的：<https://www.jekyll.com.cn/> 方便阅读。我的博客就是通过jekyll建立了，上面那个主题网站也是jekyll的，还有一个类似的工具叫“hexo”，自行了解。
+Jekyll 是一个简单免费的生成博客网页的框架，Github Pages 功能就是使用的 Jekyll 框架把仓库内的文件生成静态网页给人们浏览，其本来目的是提供给 GitHub 项目“自我介绍”用的，只不过后来陆续有人发现了其博客网站的用途，也就是上面介绍的博客网站，详情参考官网：<https://jekyllrb.com/>, 也有一个中文版的：<https://www.jekyll.com.cn/> 方便阅读。上面那个主题网站也是jekyll的，还有一个类似的工具叫“hexo”，自行了解。
 
-> **上传修改后的文件到github仓库后需要一段时间才能看到网页的变化或修改效果，所以可以选择安装本地jekyll工具进行本地快速预览。**
+由于上传修改后的文件到 github 仓库后需要一段时间才能看到网页的变化或修改效果，使得对于页面效果和功能的调试不太方便，所以如果选择在本地安装 jekyll 框架开发环境的话，可以快速预览生成效果，方便调试，最后再把成品上传到 GitHub 仓库中就可以得到预期效果了。
 
 ## 安装步骤 <span id="6.2">
 
-* **安装Ruby**：jekyll依赖于Ruby，需要提前安装，官网下载链接：<http://www.ruby-lang.org/en/downloads/>，windows/Linux/Mac的版本都有。
-* **安装gem**：官网链接<https://rubygems.org/pages/download>，貌似安装ruby后自带gem。
-cmd命令行输入 `gem` 检查是否安装成功：
+* **安装Ruby**：jekyll依赖于 Ruby 环境，需要提前安装，官网下载链接：<http://www.ruby-lang.org/en/downloads/>，windows/Linux/Mac 的版本都有。
+* **安装gem**：官网链接<https://rubygems.org/pages/download>，貌似安装 ruby 后自带 gem。
+可以 cmd 命令行输入 `gem` 检查是否安装成功：
 
 ![20180331213445607.jpg](https://i.loli.net/2018/04/15/5ad35c5295bb6.jpg)
 
@@ -255,13 +255,13 @@ cmd命令行输入 `gem` 检查是否安装成功：
 
 ![20180401085818819.jpg](https://i.loli.net/2018/04/15/5ad35c5c2c9f1.jpg)
 
-> **使用 `bundle exec jekyll s` 命令就可以运行了，如果提示没有安装 `bundler` ，就 `gem install bundler` 再 `bundle install`，可能还会提示没有安装其他组件，记下名称， `gem install xxx` 就可以了**
+使用 `bundle exec jekyll s` 命令就可以运行了，如果提示没有安装 `bundler` ，就 `gem install bundler` 再 `bundle install`，可能还会提示没有安装其他组件，记下名称， `gem install xxx` 就可以了；
 
-然后就可以成功运行了，退出按 `ctrl + c ` 键
+然后就可以成功运行了，退出按 `ctrl + c ` 键：
 
 ![20180401085938699.jpg](https://i.loli.net/2018/04/15/5ad35c5fa50e4.jpg)
 
-> **运行时保持这个窗口不要关闭，浏览器输入 `127.0.0.1:4000` 或 `localhost:4000` 进行预览，不过我的windows预览效果不太好，加载不出图片，其他系统没试过**
+运行时保持这个窗口不要关闭，浏览器输入 `127.0.0.1:4000` 或 `localhost:4000` 进行预览，不过我的windows预览效果不太好，加载不出图片，其他系统没试过；
 
 # 写博客与上传 <span id="7">
 
