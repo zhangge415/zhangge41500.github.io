@@ -7,7 +7,7 @@ excerpt: 关于异步函数中async与await的用法详解
 ---
 # async
 
-用于声明异步函数，返回值为一个 `Promise` 对象，它以类似同步的方法来写异步方法，语法与声明函数类似，例如：
+用于声明异步函数，返回值为一个 `Promise` 对象，它以类似**同步**的方法来写异步方法，语法与声明函数类似，例如：
 ```js
 async function fn() {
     console.log('Hello world!');
@@ -70,13 +70,13 @@ var value = await myPromise();
 
 这里的 `myPromise()` 是一个 Promise对象，而自定义的变量 `value` 则用于获取 Promise 对象返回的 **resolve** 状态值，如果 await 后面跟的是其他值，则直接返回该值；
 
-所以，所谓**等待**其实就是指暂停当前 `async function` 内部语句的执行，等待后面的 `Promise` 处理完返回结果后，继续执行 `async function` 函数内部的剩余语句；
+所以，所谓**等待**其实就是指暂停当前 `async function` 内部语句的执行，等待后面的 `myPromise()` 处理完返回结果后，继续执行 `async function` 函数内部的剩余语句；
 
 举例：
 ```js
-async function fn(){
+async function fn() {
     console.log(1);
-    var result = await new Promise(function(resolve, reject){
+    var result = await new Promise(function(resolve, reject) {
         setTimeout(function(){
             resolve(2);
         }, 2000);
@@ -92,12 +92,46 @@ fn();
 // 4
 ```
 
+如果不用获取返回值，也可以直接执行语句：
+```js
+async function fn() {
+    console.log(1);
+    await new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            console.log(2);
+            resolve(0);
+        }, 2000);
+    });
+    console.log(3);
+}
+fn();
+// 1
+// 2 (2 秒后)
+// 3
+```
+
+**注意**，如之前所说，await 会等到后面的 Promise **返回结果**后才会执行 async 函数后面剩下的语句，也就是说如果 Promise 不设置返回值（如 resolve），后面的代码就不会执行，例如：
+```js
+async function fn() {
+    console.log(1);
+    await new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            console.log(2);
+        }, 2000);
+    });
+    console.log(3);
+}
+fn();
+// 1
+// 2 (2 秒后输出，并且后面不会继续输出 3)
+```
+
 如果 await 后面的 Promise 返回一个 `reject` 状态的结果的话，则会被当成错误在后台抛出，例如：
 ```js
-async function fn(){
+async function fn() {
     console.log(1);
-    var result = await new Promise(function(resolve, reject){
-        setTimeout(function(){
+    var result = await new Promise(function(resolve, reject) {
+        setTimeout(function() {
             reject(2);
         }, 2000);
     });
@@ -110,18 +144,38 @@ fn();
 
 如上，2 秒后会抛出出错误，并且 3 这个数并没有被输出，说明后面的执行也被忽略了；
 
+async 也可以用于申明匿名函数用于不同场景，或者嵌套使用 async 函数，如 `await async` 的形式，只是要在 await 后面使用 async 形式的函数的话，需要这个函数立即执行且有返回值；
+```js
+let fn = async function() {
+    let a = await (async function() {
+        console.log(1);
+        return 2;
+    })();
+    console.log(a);
+
+    async function fn2() {
+        return 3;
+    }
+    console.log(await fn2());
+}
+fn();
+// 1
+// 2
+// 3
+```
+
 另外，await 后面的 Promise 返回的 reject， 也可以被该 async 函数返回的 Promise 对象以 reject 状态获取，例如：
 ```js
-async function fn(){
+async function fn() {
     console.log(1);
-    var result = await new Promise(function(resolve, reject){
-        setTimeout(function(){
+    var result = await new Promise(function(resolve, reject) {
+        setTimeout(function() {
             reject(2);
         }, 2000);
     });
     console.log(3);
 }
-fn().catch(function(error){
+fn().catch(function(error) {
     console.log(error);
 });
 // 1
