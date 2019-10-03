@@ -2,9 +2,10 @@
 title: JavaScript事件循环
 layout: post
 categories: JavaScript
-tags: event-loop 事件循环 堆栈
+tags: event-loop 事件循环 堆栈 宏任务 微任务
 excerpt: JavaScript运行机制以及堆栈的详细描述
 ---
+
 # 运行时（runtime）
 
 一个 JavaScript 运行时包含 **栈(stack), 堆(heap), 队列(queue)**;
@@ -153,3 +154,52 @@ fn3();
 # 事件循环 (Event Loop)
 
 所谓事件循环，大致就是上诉过程；这里的 **事件** 指的就是消息队列中的消息，即队列中的调用函数；**循环** 即不断执行完队列中的消息，并等待是否有新消息到达，进而将其执行的这一循环过程；
+
+# 宏任务/微任务
+
+由于 JavaScript 的执行是**单线程**的（浏览器是多线程的），所以为了避免代码执行时遇到一些耗时的操作阻塞后续操作，就有了**同步任务**和**异步任务**之分；在 js 执行期间，遇到同步任务就执行**入栈**操作，遇到异步任务就放入**队列**中，栈中的同步任务执行完后再执行队列中的异步任务，也就是上面说的事件循环，这样就避免了耗时任务对栈中主线程的阻塞，一般大多数函数和变量声明都是同步任务，异步任务占少数如 `setTimeout()`, `setInterval()`, `Promise()` 等；其中，异步任务又可分为**宏任务**和**微任务**；
+
+宏任务常见的有 `setTimeout()`, `setInterval()`，微任务常见的便是 `Promise()` 和 `process.nextTick()`（nodejs 中使用）；之前只提到消息队列，这里为了便于理解可以把宏任务和微任务看成两个分开的队列：宏任务队列与微任务队列；
+
+我们通过以下代码看一下同步任务、宏任务、微任务的执行顺序：
+```js
+console.log('Sync task.');
+
+setTimeout(() => {
+    console.log('Macro task.');
+}, 0);
+
+Promise.resolve('Micro task.').then(res => {
+    console.log(res);
+})
+
+console.log('End.');
+// Sync task.
+// End.
+// Micro task.
+// Macro task.
+```
+
+接下来我们把宏任务和微任务的顺序换一下，再看一下结果：
+```js
+console.log('Sync task.');
+
+Promise.resolve('Micro task.').then(res => {
+    console.log(res);
+})
+
+setTimeout(() => {
+    console.log('Macro task.');
+}, 0);
+
+console.log('End.');
+// Sync task.
+// End.
+// Micro task.
+// Macro task.
+```
+
+综合结果证明，任务的执行顺序是：
+```txt
+同步任务 --> 微任务 --> 宏任务
+```
