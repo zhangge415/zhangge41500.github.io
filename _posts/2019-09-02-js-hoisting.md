@@ -90,6 +90,85 @@ var fn = function() {
 
 这种情况便是将变量 `fn` 提升，值为 `undefined`，所以执行 `fn()` 语句会提示 `fn is not a function` 而不是 `fn is not defined`，与使用关键字 `function` 申明函数情况不一样；
 
+# 拓展
+
+## return 的限制
+
+另外值得一提的是，我们都知道 `return` 是函数内代码执行结束的标志，其后代码不会执行，但是提升行为却不受此限制，例如：
+```js
+function fn() {
+    console.log(a);
+    fnn();
+    return ;
+
+    var a = 1;
+    function fnn() {
+        console.log('exist.')
+    }
+}
+
+fn();
+// undefined
+// exist.
+```
+
+## 提升优先级
+
+上面提到两种提升行为，那么它们的优先级顺序是如何的呢？还是通过代码说明：
+```js
+function fn1() {
+    console.log(a);
+    var a = 1;
+    function a(){};
+}
+function fn2() {
+    console.log(a);
+    function a(){};
+    var a = 1;
+}
+
+fn1(); // f a() {}
+fn2(); // f a() {}
+```
+
+结果证明函数的提升优先级始终高于普通变量的提升；
+
+## 提升的执行
+
+再来看一种情况：
+```js
+function fn() {
+    fnn();
+
+    var a = 1;
+    function fnn() {
+        console.log(a);
+    }
+}
+
+fn(); // undefined
+```
+
+这里按照正常的逻辑，申明函数 `fnn()` 之前就已经申明了变量 `a`，所以会感觉函数 fnn 应该可以访问变量 a，但是最后输出的并不是 `1`，输出 `undefined` 说明函数 fnn 并没有访问到赋值后的 a，并且所访问的 a 也触发了提升机制，因为输出的不是 `RefferenceError`，那么就能大致梳理出提升真
+正的执行顺序了：
+
+1. 执行 fn();
+2. 执行 fnn();
+   1. 发现前面没有关于函数 fnn() 的申明，于是向后寻找，最后找到了；
+   2. 执行 console.log(a);
+   3. 发现 fnn 内部没有 a 的定义，向外一层寻找；
+3. a 申明在 fnn() 执行语句以后，所以 a 触发提升，供之前的 console.log 使用；
+   
+因此上面的代码相当于是以下面的顺序执行的：
+```js
+function fn() {
+    console.log(a);
+    var a = 1;
+}
+
+fn();
+```
+
 # var, let, const的区别
 
 JavaScript 中申明变量的方式以及对应效果如下：
