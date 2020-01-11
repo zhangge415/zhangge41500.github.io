@@ -7,25 +7,26 @@ excerpt: 关于安卓端安装Kali Linux的详细教程
 ---
 # 目录
 
+- [目录](#目录)
 - [前言](#前言)
 - [原理概述](#原理概述)
 - [ROOT 环境](#root-环境)
-    - [主要软件](#主要软件)
-        - [Linux Deploy](#linux-deploy)
-        - [VNC Viewer](#vnc-viewer)
-        - [Terminal](#terminal)
-    - [配置](#配置)
-    - [配置文件](#配置文件)
-    - [安装系统](#安装系统)
-    - [进入系统](#进入系统)
-    - [关闭系统](#关闭系统)
+  - [主要软件](#主要软件)
+    - [Linux Deploy](#linux-deploy)
+    - [VNC Viewer](#vnc-viewer)
+    - [Terminal](#terminal)
+  - [配置](#配置)
+  - [配置文件](#配置文件)
+  - [安装系统](#安装系统)
+  - [进入系统](#进入系统)
+  - [关闭系统](#关闭系统)
 - [非 ROOT 环境](#非-root-环境)
-    - [主要软件](#主要软件-1)
-        - [Termux](#termux)
-        - [AndroNix](#andronix)
-    - [安装系统](#安装系统-1)
-    - [安装图形桌面](#安装图形桌面)
-    - [关闭系统](#关闭系统-1)
+  - [主要软件](#主要软件-1)
+    - [Termux](#termux)
+    - [AndroNix](#andronix)
+  - [安装系统](#安装系统-1)
+  - [安装图形桌面](#安装图形桌面)
+  - [关闭系统](#关闭系统-1)
  
 # 前言
  
@@ -238,6 +239,7 @@ http://mirrors.aliyun.com/kali/
 ![Screenshot_20191219-144625.png](https://i.loli.net/2020/01/10/g42DyO57vkTiEtB.png)
 
 如果 **图形子系统** 选择 framebuffer 的话，**图形界面设置** 选项如下：
+
 ![Screen-20191211-144016.png](https://i.loli.net/2019/12/25/QUnOXAF5TzGf2MC.jpg)
 
 设置也是默认不变，只不过由于这种图形显示技术比较特殊（古老），笔者尝试并未成功，手机还多次卡死 -_-，所以保守派就不要轻易尝试了，自担风险；
