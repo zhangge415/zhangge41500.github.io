@@ -1,15 +1,5 @@
 M.AutoInit();
 
-// (function($){
-//   $(function(){
-//     $(".sidenav").sidenav();
-//   });
-// })(jQuery);
-
-// $(document).ready(function(){
-//   $('.sidenav').sidenav();
-// });
-
 document.addEventListener('DOMContentLoaded', function () {
     var elemCategory = document.querySelector('#category');
     M.Sidenav.init(elemCategory, {
