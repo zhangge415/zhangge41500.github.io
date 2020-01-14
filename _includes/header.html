@@ -21,12 +21,15 @@
         {% endif %}
     </title>
     <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/assets/res/favicon.ico">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/materialize.min.css">
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
     <!-- <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"> -->
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/icons.css">
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/stylesheet.css">
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/bg-animation.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/category.css">
     {% for css in layout.css %}
     {% if css contains "//" %}
     <link rel="stylesheet" href="{{css}}">
@@ -71,18 +74,25 @@
                 <div class="search-results"></div>
             </div>
         </nav>
+
         <div class="container">
-            <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+            <!-- <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only"> -->
+            <a href="#" data-target="slide-out" class="sidenav-trigger top-nav full hide-on-large-only">
                 <i class="material-icons">menu</i>
             </a>
         </div>
-        <ul id="slide-out" class="side-nav fixed" style="background-color:#ddd">
+        <!-- <ul id="slide-out" class="side-nav fixed" style="background-color:#ddd"> -->
+        <ul id="slide-out" class="sidenav sidenav-fixed" style="background-color:#ddd">
             <li>
                 <div class="userView">
-                    <div class="background"></div>
-                    <a href="{{site.github_profile}}" target="_blank"><img class="circle z-depth-2" src="{{site.baseurl}}/assets/res/user.png"></a>
-                    <span class="white-text name">{{site.user}} <i>(Knight Huang)</i></span>
-                    <span class="white-text email">{{site.user_email}}</span>
+                    <img class="user-bg" src="{{site.baseurl}}/assets/res/bg.png" />
+                    <a class="user-avatar" href="{{site.github_profile}}" target="_blank">
+                        <img class="circle z-depth-2" src="{{site.baseurl}}/assets/res/user.png" width="64" />
+                    </a>
+                    <div class="white-text user-info">
+                        {{site.user}} <i>(Knight Huang)</i><br>
+                        {{site.user_email}}
+                    </div>
                 </div>
             </li>
             <li><a class="waves-effect" href="{{site.baseurl}}/"><i class="material-icons">home</i>Home - 主页</a></li>
