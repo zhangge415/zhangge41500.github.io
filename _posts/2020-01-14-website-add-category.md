@@ -249,7 +249,7 @@ if (categories.length > 0) {
 
 # 效果
 
-最后附上几张本人博客网站实现的最终效果图，也欢迎点击 <https://knightyun.github.io> 前往访问 \^_\^
+最后附上几张本人博客网站实现的最终效果图，也欢迎点击 <https://knightyun.github.io> 前往访问 ^_^
 
 ![批注 2020-01-14 154351.png](https://i.loli.net/2020/01/14/qfkJO3XaMvAh48o.png)
 
