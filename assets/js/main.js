@@ -44,22 +44,26 @@ Particles.init({
     responsive: [{
         breakpoint: 768,
         options: {
-            maxParticles: 60
+            maxParticles: 60,
+            minDistance: 80
         }
     },{
         breakpoint: 425,
         options: {
-            maxParticles: 50
+            maxParticles: 50,
+            minDistance: 70
         }
     },{
         breakpoint: 375,
         options: {
-            maxParticles: 40
+            maxParticles: 40,
+            minDistance: 60
         }
     },{
         breakpoint: 320,
         options: {
-            maxParticles: 30
+            maxParticles: 30,
+            minDistance: 50
         }
     }]
 })
