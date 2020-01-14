@@ -7,7 +7,7 @@
     <meta name="baidu-site-verification" content="X2hsRcRCeh" />
     <meta name="360-site-verification" content="fa6ca3a9a0330e9cecabee0a9fe1d52a" />
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <!--SOUGOU-->
+    <!-- 搜狗 -->
     <meta name="sogou_site_verification" content="oatSp9uAV5" />
     <!--熊掌号 new-->
     <meta name="baidu-site-verification" content="Wkb0Jzk8yx" />
@@ -20,53 +20,50 @@
         {{ site.title | escape }}
         {% endif %}
     </title>
-    <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/assets/res/favicon.ico">
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/materialize.min.css">
-    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-    <!-- <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"> -->
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/icons.css">
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/stylesheet.css">
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/bg-animation.css">
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/category.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/res/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/icons.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/stylesheet.css">
+    <link rel="stylesheet" href="/assets/css/bg-animation.css">
+    <link rel="stylesheet" href="/assets/css/category.css">
     {% for css in layout.css %}
     {% if css contains "//" %}
     <link rel="stylesheet" href="{{css}}">
     {% else %}
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}">
+    <link rel="stylesheet" href="/assets/css/{{css}}">
     {% endif %}
     {% endfor %}
     {% for css in page.css %}
     {% if css contains "//" %}
     <link rel="stylesheet" href="{{css}}">
     {% else %}
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}">
+    <link rel="stylesheet" href="/assets/css/{{css}}">
     {% endif %} 
     {% endfor %}
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/syntax.css">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{site.baseurl}}/feed.xml">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="{{site.baseurl}}/sitemap.xml">
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     {% seo title=false %}
-
 </head>
 
 <body>
     <header>
         <nav class="top-nav">
+            <div class="particles-wrapper">
+                <canvas class="particles"></canvas>
+            </div>
             <div class="nav-wrapper">
                 <div class="container">
-                    <!-- Github buttons -->
                     <div class="github-btns">
                         <iframe src="https://ghbtns.com/github-btn.html?user=knightyun&repo=knightyun.github.io&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
                         <iframe src="https://ghbtns.com/github-btn.html?user=knightyun&repo=knightyun.github.io&type=fork&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
                         <iframe src="https://ghbtns.com/github-btn.html?user=knightyun&type=follow&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
                     </div>
-                    <a class="page-title" href="{{site.baseurl}}/">{{site.title}}</a>
+                    <a class="page-title" href="/">{{site.title}}</a>
                     <p class="head-message">学习&nbsp;&nbsp;总结&nbsp;&nbsp;分享&nbsp;&nbsp;提升</p>
                 </div>
             </div>
-            <!-- Search box -->
             <div class="search">
                 <i class="material-icons search-icon search-start">search</i>
                 <input type="text" class="search-input" placeholder="Searching...（支持正则表达式）" />
@@ -76,18 +73,16 @@
         </nav>
 
         <div class="container">
-            <!-- <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only"> -->
             <a href="#" data-target="slide-out" class="sidenav-trigger top-nav full hide-on-large-only">
                 <i class="material-icons">menu</i>
             </a>
         </div>
-        <!-- <ul id="slide-out" class="side-nav fixed" style="background-color:#ddd"> -->
         <ul id="slide-out" class="sidenav sidenav-fixed" style="background-color:#ddd">
             <li>
                 <div class="userView">
-                    <img class="user-bg" src="{{site.baseurl}}/assets/res/bg.png" />
+                    <img class="user-bg" src="/assets/res/bg.png" />
                     <a class="user-avatar" href="{{site.github_profile}}" target="_blank">
-                        <img class="circle z-depth-2" src="{{site.baseurl}}/assets/res/user.png" width="64" />
+                        <img class="circle z-depth-2" src="/assets/res/user.png" width="64" />
                     </a>
                     <div class="white-text user-info">
                         {{site.user}} <i>(Knight Huang)</i><br>
@@ -95,22 +90,13 @@
                     </div>
                 </div>
             </li>
-            <li><a class="waves-effect" href="{{site.baseurl}}/"><i class="material-icons">home</i>Home - 主页</a></li>
-            <li><a class="waves-effect" href="{{site.baseurl}}/projects"><i class="material-icons">description</i>Github - 项目</a></li>
-            <li><a class="waves-effect" href="{{site.baseurl}}/categories"><i class="material-icons">sort</i>Categories - 目录</a></li>
-            <li><a class="waves-effect" href="{{site.baseurl}}/tags"><i class="material-icons">label</i>Tags - 标签</a></li>
-            <li><a class="waves-effect" href="{{site.baseurl}}/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS - 订阅</a></li>
-            <li>
-                <div class="divider"></div>
-            </li>
-            <li><a class="waves-effect" href="{{site.baseurl}}/about"><i class="material-icons">person</i>About - 关于我</a></li>
-            <li><a class="waves-effect" href="{{site.baseurl}}/contact"><i class="material-icons">email</i>Contact - 联系我</a></li>
-            <!-- <li>
-                <a class="waves-effect" href="javascript:void(0)"><img src="{{site.baseurl}}/assets/res/wechat-slide.png"
-                        style="margin:12px 32px 0 0">WeChat - 微信公众号</a>
-                <img src="{{site.baseurl}}/assets/res/knight.png" alt="微信公众号搜索：程序骑士" width="80%" title="微信公众号搜索：程序骑士"
-                    style="margin-left:10%">
-            </li> -->
+            <li><a class="waves-effect" href="/"><i class="material-icons">home</i>Home - 主页</a></li>
+            <li><a class="waves-effect" href="/projects"><i class="material-icons">description</i>Github - 项目</a></li>
+            <li><a class="waves-effect" href="/categories"><i class="material-icons">sort</i>Categories - 目录</a></li>
+            <li><a class="waves-effect" href="/tags"><i class="material-icons">label</i>Tags - 标签</a></li>
+            <li><a class="waves-effect" href="/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS - 订阅</a></li>
+            <li><a class="waves-effect" href="/about"><i class="material-icons">person</i>About - 关于我</a></li>
+            <li><a class="waves-effect" href="/contact"><i class="material-icons">email</i>Contact - 联系我</a></li>
         </ul>
     </header>
     <main>

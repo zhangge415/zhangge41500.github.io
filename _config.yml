@@ -22,14 +22,10 @@ permalink: /:year/:month/:day/:title
 repository: knightyun/knightyun.github.io
 paginate: 5
 
-# MatJek specific configurations
 github_profile: "https://github.com/knightyun"
 user: "黄琦雲"
 user_email: "2386209384@qq.com"
-# contact_url: "https://goo.gl/tVljbV"
-# google_tracking_id: "UA-96359860-1"
-# google_site_verification: "UA-96359860-1"
-# disqus_shortname: "黄琦雲"
+# disqus_shortname: ""
 
 # Build settings
 markdown: kramdown
