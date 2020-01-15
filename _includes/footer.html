@@ -4,9 +4,9 @@
     <div class="container">
         <div class="row">
             <div class="col s12">
-                <img src="/assets/res/logo.png" alt="logo" />
-                <span class="footer-message">&nbsp;勤奋的程序猿，用心敲写明天</span>
-                <p>
+                <p class="footer-message grey-text text-lighten-3">以勤劳的双手，用心敲写明天</p>
+                <hr>
+                <p class="visit-statistics">
                     <span id="busuanzi_container_site_pv">访问量：<span id="busuanzi_value_site_pv"></span>次</span>&nbsp;
                     <span id="busuanzi_container_site_pv">访客量：<span id="busuanzi_value_site_uv"></span>人次</span>
                 </p>
@@ -16,7 +16,7 @@
     </div>
     <div class="footer-copyright">
         <div class="container">
-            &#xA9; {{"now" | date: "%Y"}} {{site.title}}. All rights reserved. Powered by <a href={{site.url}}>knightyun</a>.
+            Copyright &#xA9; {{"now" | date: "%Y"}} {{site.title}} | All rights reserved | Powered by <a href={{site.github_profile}}>knightyun</a>.
         </div>
     </div>
     <!-- 右下角功能按钮 -->
@@ -115,6 +115,15 @@
 </script>
 <!-- 不蒜子访问统计 -->
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156262762-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-156262762-1');
+</script>
 <!-- LinkedIn -->
 <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 

@@ -8,26 +8,20 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: 黄琦雲的博客
-description: > # this means to ignore newlines until "baseurl:"
+# 以下为自定义的全局变量，可以在 HTML 文件中引用，
+# 比如代码：<h1>{{ site.title }}</h1> 
+# 将会展示为设定的值，也可以自行添加其他自定义全局变量。
+title: 黄琦雲的博客 # 网站的标题
+description: > # 网站的描述，可能会出现在搜索引擎展示结果中
   基于 jekyll 的 Github Pages 个人博客网站，技术的学习、总结、分享与提升
-baseurl: ""
-url: "https://knightyun.github.io"
-permalink: /:year/:month/:day/:title
-repository: knightyun/knightyun.github.io
-paginate: 5
+url: "https://knightyun.github.io" # 网站地址
+github_repo: knightyun/knightyun.github.io
+github_profile: "https://github.com/knightyun" # GitHub 个人主页
+user: "黄琦雲" # 用于侧栏展示的名字
+user_email: "2386209384@qq.com" # 侧栏展示的联系方式
+paginate: 5 # 主页展示的博客文章数量
 
-github_profile: "https://github.com/knightyun"
-user: "黄琦雲"
-user_email: "2386209384@qq.com"
-# disqus_shortname: ""
-
-# Build settings
+# jekyll 相关配置
 markdown: kramdown
 plugins:
   - jekyll-feed
