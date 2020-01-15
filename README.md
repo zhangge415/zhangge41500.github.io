@@ -5,16 +5,20 @@
     <!-- <p>A responsive [Material](https://material.io/) theme based on[Materialize.css](http://materializecss.com/) for jekyll sites.</p> -->
     <p>基于 jekyll 的响应式 Github Pages 个人博客网站</p>
 
-![GitHub stars](https://img.shields.io/github/stars/knightyun/knightyun.github.io?style=flat)
-![GitHub forks](https://img.shields.io/github/forks/knightyun/knightyun.github.io?style=flat)
-![GitHub followers](https://img.shields.io/github/followers/knightyun?style=flat)
-[![Github issues](https://img.shields.io/badge/issues-welcome-success)](https://github.com/knightyun/knightyun.github.io/issues)
+
 
 [![license](https://img.shields.io/github/license/knightyun/knightyun.github.io)](https://github.com/knightyun/knightyun.github.io/blob/master/COPYING)
 [![Gitter](https://img.shields.io/gitter/room/knightyun/knightyun.github.i0)](https://gitter.im/knightyun-github-io/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Website](https://img.shields.io/website?down_color=lightgrey%09&down_message=offline&up_color=%09aqua&up_message=online&url=https%3A%2F%2Fknightyun.github.io)](https://knightyun.github.io)
 [![GitHub deployments](https://img.shields.io/github/deployments/knightyun/knightyun.github.io/github-pages)](https://github.com/knightyun/knightyun.github.io/deployments)
 ![GitHub top language](https://img.shields.io/github/languages/top/knightyun/knightyun.github.io)
+
+![GitHub stars](https://img.shields.io/github/stars/knightyun/knightyun.github.io?style=flat)
+![GitHub forks](https://img.shields.io/github/forks/knightyun/knightyun.github.io?style=flat)
+![GitHub followers](https://img.shields.io/github/followers/knightyun?style=flat)
+[![Github issues](https://img.shields.io/badge/issues-welcome-success)](https://github.com/knightyun/knightyun.github.io/issues)
+[![Github pull request](https://img.shields.io/badge/pull%20request-welcome-success)](https://github.com/knightyun/knightyun.github.io/pulls)
+
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/knightyun/knightyun.github.io)](https://github.com/knightyun/knightyun.github.io/commit/master)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/y/knightyun/knightyun.github.io)](https://github.com/knightyun/knightyun.github.io/graphs/commit-activity)
