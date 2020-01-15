@@ -5,8 +5,6 @@
     <!-- <p>A responsive [Material](https://material.io/) theme based on[Materialize.css](http://materializecss.com/) for jekyll sites.</p> -->
     <p>基于 jekyll 的响应式 Github Pages 个人博客网站</p>
 
-
-
 [![license](https://img.shields.io/github/license/knightyun/knightyun.github.io)](https://github.com/knightyun/knightyun.github.io/blob/master/COPYING)
 [![Gitter](https://img.shields.io/gitter/room/knightyun/knightyun.github.i0)](https://gitter.im/knightyun-github-io/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Website](https://img.shields.io/website?down_color=lightgrey%09&down_message=offline&up_color=%09aqua&up_message=online&url=https%3A%2F%2Fknightyun.github.io)](https://knightyun.github.io)
@@ -19,9 +17,8 @@
 [![Github issues](https://img.shields.io/badge/issues-welcome-success)](https://github.com/knightyun/knightyun.github.io/issues)
 [![Github pull request](https://img.shields.io/badge/pull%20request-welcome-success)](https://github.com/knightyun/knightyun.github.io/pulls)
 
-
 [![GitHub last commit](https://img.shields.io/github/last-commit/knightyun/knightyun.github.io)](https://github.com/knightyun/knightyun.github.io/commit/master)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/y/knightyun/knightyun.github.io)](https://github.com/knightyun/knightyun.github.io/graphs/commit-activity)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/knightyun/knightyun.github.io)](https://github.com/knightyun/knightyun.github.io/graphs/commit-activity)
 ![GitHub repo size](https://img.shields.io/github/repo-size/knightyun/knightyun.github.io)
 </div>
 
