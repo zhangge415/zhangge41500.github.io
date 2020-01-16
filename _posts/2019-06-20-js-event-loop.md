@@ -1,9 +1,9 @@
 ---
-title: JavaScript事件循环
+title:  JavaScript 事件循环
 layout: post
 categories: JavaScript
 tags: event-loop 事件循环 堆栈 宏任务 微任务
-excerpt: JavaScript运行机制以及堆栈的详细描述
+excerpt: JavaScript 运行机制以及堆栈的详细描述
 ---
 
 # 运行时（runtime）

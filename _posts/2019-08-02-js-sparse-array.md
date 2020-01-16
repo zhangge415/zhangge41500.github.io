@@ -1,9 +1,9 @@
 ---
-title: JavaScript稀疏数组
+title:  JavaScript 稀疏数组
 layout: post
 categories: JavaScript
 tags: 稀疏数组 sparse
-excerpt: 关于JavaScript中稀疏数组的介绍
+excerpt: 关于JavaScript 中稀疏数组的介绍
 ---
 # 稀疏数组
 

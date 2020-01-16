@@ -1,5 +1,5 @@
 ---
-title: JavaScript类型转换的有趣应用
+title:  JavaScript 类型转换的有趣应用
 layout: post
 categories: JavaScript
 tags: 类型转换 表达式

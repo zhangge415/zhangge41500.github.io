@@ -1,5 +1,5 @@
 ---
-title: C语言打印九九乘法表
+title:  C 语言打印九九乘法表
 layout: post
 categories: C语言
 tags: C语言

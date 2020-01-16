@@ -1,9 +1,9 @@
 ---
-title: C语言之随机数函数(rand())的使用方法
+title: C 语言之随机数函数（rand()）的使用方法
 layout: post
 categories: C语言
 tags: C语言随机数 伪随机数 rand() srand()
-excerpt: C语言关于随机数函数的用法和原理
+excerpt: C 语言关于随机数函数的用法和原理
 ---
 在程序设计中，难免会使用到随机值函数，其原理与语法大多类似，接下来以C语言为例介绍其随机值函数 `rand()` 用法。
 

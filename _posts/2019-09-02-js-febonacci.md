@@ -1,9 +1,9 @@
 ---
-title: JavaScript实现斐波那契数列（Febonacci Array）
+title: JavaScript 实现斐波那契数列（Febonacci Array）
 layout: post
 categories: JavaScript
 tags: 斐波那契 febonacci
-excerpt: 斐波那契数列的JavaScript实现
+excerpt: 斐波那契数列的 JavaScript 实现
 ---
 斐波那契（Febonacci）数列是一个神奇的数列，在很多地方都有应用，可以自行搜索相关图片体会其魅力，这里不赘述，直接来分析一下如何通过 JavaScript 来实现；
 

@@ -1,5 +1,5 @@
 ---
-title: C语言统计闰年
+title:  C 语言统计闰年
 layout: post
 categories: C语言
 tags: C语言

@@ -3,7 +3,7 @@ title: Kali Linux 自定义分辨率
 layout: post
 categories: Linux
 tags: Linux分辨率 cvt xrandr
-excerpt: Linux系统中自定义分辨率的方法
+excerpt: Linux 系统中自定义分辨率的方法
 ---
 Kali中无分辨率1920 x 1080，自定义的步骤：
 

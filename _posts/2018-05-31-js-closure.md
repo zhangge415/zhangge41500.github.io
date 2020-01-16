@@ -1,9 +1,9 @@
 ---
-title: JavaScript闭包详解
+title:  JavaScript 闭包详解
 layout: post
 categories: JavaScript
 tags: js闭包 js作用域
-excerpt: javascript闭包原理详解与举例
+excerpt: JavaScript 闭包原理详解与举例
 ---
 # 变量作用域
 

@@ -1,9 +1,9 @@
 ---
-title: css布局模型详细介绍
+title:  CSS 布局模型详细介绍
 layout: post
 categories: CSS
 tags: css布局模型 绝对定位 相对定位 固定定位 position
-excerpt: css布局类型详细介绍与举例说明
+excerpt: CSS 布局类型详细介绍与举例说明
 ---
 HTML中元素有三种布局模型：流动模型、浮动模型、层模型。
 

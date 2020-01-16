@@ -1,9 +1,9 @@
 ---
-title: JavaScript逻辑运算符“&&”和“||”短路原则的应用
+title:  JavaScript 逻辑运算符 “&&” 和 “||” 短路原则的应用
 layout: post
 categories: JavaScript
 tags: javascript逻辑运算 短路原则
-excerpt: javas中逻辑运算符的介绍，短路原则的介绍与应用
+excerpt: JavaScript 中逻辑运算符的介绍，短路原则的介绍与应用
 ---
 # 逻辑运算符
 

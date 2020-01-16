@@ -1,9 +1,9 @@
 ---
-title: JavaScript实现元素全排列
+title:  JavaScript 实现元素全排列
 layout: post
 categories: JavaScript
 tags: 全排列
-excerpt: JavaScript实现不同元素的全排列情况
+excerpt: JavaScript 实现不同元素的全排列情况
 ---
 # 排列 (Permutation / Arrangement)
 

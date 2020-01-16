@@ -1,9 +1,9 @@
 ---
-title: ECMAScript 发展简史
+title:  ECMAScript 发展简史
 layout: post
 categories: JavaScript
 tags: es6 ECMAScript
-excerpt: ECMAScript发展简史总结
+excerpt: ECMAScript 发展简史总结
 ---
 
 > ECMAScript，简称 ES，是 JavaScript 的标准版，经历了不同版本的变化；

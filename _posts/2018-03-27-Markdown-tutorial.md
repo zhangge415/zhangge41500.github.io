@@ -1,9 +1,9 @@
 ---
-title: Markdown简明教程
+title:  Markdown 简明教程
 layout: post
 categories: 编程
 tags: markdown
-excerpt: 简要markdown语法
+excerpt: 简要 markdown 语法
 ---
 ---------
 

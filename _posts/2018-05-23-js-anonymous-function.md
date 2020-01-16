@@ -1,9 +1,9 @@
 ---
-title: JavaScript中语句与函数的执行辨析
+title:  JavaScript 中语句与函数的执行辨析
 layout: post
 categories: JavaScript
 tags: javascript函数 匿名函数 javascript语句
-exccerpt: Javascript中函数与匿名函数及语句的使用辨析
+exccerpt: Javascript 中函数与匿名函数及语句的使用辨析
 ---
 Javascript代码中，语句和函数以及匿名函数的执行存在一些区别，所以在编写过程中也存在一些“坑“。
 

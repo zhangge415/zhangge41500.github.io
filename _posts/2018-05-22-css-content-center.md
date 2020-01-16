@@ -1,9 +1,9 @@
 ---
-title: CSS样式之内容居中方法
+title:  CSS 样式之内容居中方法
 layout: post
 categories: CSS
 tags: css水平居中 css垂直居中
-excerpt: CSS样式设置使html内容水平居中和垂直居中的方法
+excerpt: CSS 样式设置使 HTML 内容水平居中和垂直居中的方法
 ---
 # 水平居中
 

@@ -1,9 +1,9 @@
 ---
-title: JavaScript数组排序详解
+title:  JavaScript 数组排序详解
 layout: post
 categories: JavaScript
 tags: 数组 排序 乱序
-excerpt: 关于JavaScript中数组排序函数的介绍和应用
+excerpt: 关于 JavaScript 中数组排序函数的介绍和应用
 ---
 提到 JavaScript 中对数组进行排序操作，可能首先想到的就是 `Array.prototype.sort()` 这个函数，比如以下场景就比较常见：
 

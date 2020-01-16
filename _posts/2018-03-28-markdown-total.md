@@ -1,5 +1,5 @@
 ---
-title: Markdown完整语法说明
+title:  Markdown 完整语法说明
 layout: post
 categories: 编程
 tags: markdown

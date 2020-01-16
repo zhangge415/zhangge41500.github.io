@@ -1,9 +1,9 @@
 ---
-title: CSS3之2D与3D变换
+title: CSS3 之 2D 与 3D 变换
 layout: post
 categories: CSS
 tags: css2d css3d transform
-excerpt: 介绍css中元素的2D与3D变换方法
+excerpt: 介绍 CSS 中元素的 2D 与 3D 变换方法
 ---
 # 目录
 

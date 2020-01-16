@@ -1,9 +1,9 @@
 ---
-title: CSS3过渡与动画
+title:  CSS3 过渡与动画
 layout: post
 categories: CSS
 tags: css3过渡 css3动画 transition animation
-excerpt: css3中的过渡与动画效果的介绍
+excerpt: CSS3 中的过渡与动画效果的介绍
 ---
 CSS3中出现很多新的特性，下面就讲一下其中比较好玩的**3D操作**，**过渡**和**动画**效果；
 

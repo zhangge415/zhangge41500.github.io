@@ -1,5 +1,5 @@
 ---
-title: C语言统计素数
+title:  C 语言统计素数
 layout: post
 categories: C语言
 tags: C语言

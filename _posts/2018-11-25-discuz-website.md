@@ -3,7 +3,7 @@ title: 搭建个人论坛网站图文教程
 layout: post
 categories: 网站
 tags: 建站 论坛 discuz
-excerpt: 关于discuz论坛网站的详细图文搭建教程
+excerpt: 关于 discuz 论坛网站的详细图文搭建教程
 ---
 # 关于建站
 前面的文章介绍过如何使用Github Pages提供的仓库服务搭建Jekyll个人博客，链接在这 [https://knightyun.github.io/2018/04/01/github-pages-blog](https://knightyun.github.io/2018/04/01/github-pages-blog)，现在来了解一下如何一步步搭建自己的论坛网站。

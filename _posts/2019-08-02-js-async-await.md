@@ -1,9 +1,9 @@
 ---
-title: async与await的用法详解
+title: async 与 await 的用法详解
 layout: post
 categories: JavaScript
 tags: asnyc await 异步
-excerpt: 关于异步函数中async与await的用法详解
+excerpt: 关于异步函数中 async 与 await 的用法详解
 ---
 # async
 

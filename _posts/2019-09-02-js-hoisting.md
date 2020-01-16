@@ -1,9 +1,9 @@
 ---
-title: JavaScript变量提升（Hoisting）详解
+title: JavaScript 变量提升（Hoisting）详解
 layout: post
 categories: JavaScript
 tags: 提升 hoisting
-excerpt: JavaScript中关于提升行为的介绍
+excerpt: JavaScript 中关于提升行为的介绍
 ---
 # 概念
 

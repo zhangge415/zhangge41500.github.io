@@ -1,9 +1,9 @@
 ---
-title: Linux中sudo免密码
+title: Linux 中 sudo 免密码
 layout: post
 categories: Linux
 tags: sudoers sudo
-excerpt: Linux中执行sudo不用输入密码的方法
+excerpt: Linux 中执行 sudo 不用输入密码的方法
 ---
 平时在 Linux 中执行一些命令时，可能会遇到 `Permission denied` 这样的提示，即该用户没有权限；
 

@@ -1,9 +1,9 @@
 ---
-title: Kali Linux之软件安装、卸载、更新和修改更新源
+title: Kali Linux 之软件安装、卸载、更新和修改更新源
 layout: post
 categories: Linux
 tags: Linux安装软件 Linux更新源
-excerpt: Linux系统软件安装、卸载、更新与修改更新源
+excerpt: Linux 系统软件安装、卸载、更新与修改更新源
 ---
 使用Linux系统，与Windows系统一样，也需要及时进行软件与系统的更新。
 

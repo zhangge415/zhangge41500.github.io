@@ -1,9 +1,9 @@
 ---
-title: JavaScript深度迭代遍历未知对象
+title:  JavaScript 深度迭代遍历未知对象
 layout: post
 categories: JavaScript
 tags: 迭代遍历 深度遍历 未知对象
-excerpt: 介绍js中对未知对象的遍历方法
+excerpt: 介绍 js 中对未知对象的遍历方法
 ---
 面向对象编程的语言，都存在对对象的一些操作，其中就包括遍历未知对象的属性值。
 

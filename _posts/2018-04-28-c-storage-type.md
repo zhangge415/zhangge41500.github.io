@@ -1,5 +1,5 @@
 ---
-title: C语言之变量存储类型与链接属性
+title:  C 语言之变量存储类型与链接属性
 layout: post
 categories: C语言
 excerpt: C语言的变量存储类型与链接属性的区别分析

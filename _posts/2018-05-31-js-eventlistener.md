@@ -1,9 +1,9 @@
 ---
-title: addEventListener方法与on事件的区别
+title: addEventListener 方法与 on 事件的区别
 layout: post
 categories: JavaScript
 tags: addeventlistener onclick 事件监听 冒泡捕获
-excerpt: Javascript中事件监听addEventListener与on事件的区别与举例分析
+excerpt: Javascript 中事件监听 addEventListener 与 on 事件的区别与举例分析
 ---
 # on事件
 

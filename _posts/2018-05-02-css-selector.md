@@ -1,5 +1,5 @@
 ---
-title: CSS选择器详细介绍
+title:  CSS 选择器详细介绍
 layout: post
 categories: CSS
 tags: css选择器 内联嵌入外部式 ID类选择器区别 伪元素

@@ -1,9 +1,9 @@
 ---
-title: 'UTF-8, ASCII, unicode的介绍与区分'
+title: UTF-8, ASCII, Unicode 的介绍与区分
 layout: post
 categories: 编程
 tags: utf-8 ascii unicode
-excerpt: 关于UTF-8，ASCII，Unicode的介绍与区分
+excerpt: 关于 UTF-8，ASCII，Unicode 的介绍与区分
 ---
 # 背景
 
