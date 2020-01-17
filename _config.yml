@@ -32,7 +32,9 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - COPYING
 sass:
   style: compressed
 future: true
+permalink: /:year/:month/:day/:title
 theme: jekyll-theme-slate

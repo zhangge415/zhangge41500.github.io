@@ -38,8 +38,9 @@ jekyll 使用教程：<https://www.jekyll.com.cn/>
 
 ## 配置
 
-配置文件是位于主目录的 `_config.yml`，以下是我的网站配置示例，以供参考：
+配置文件是位于主目录的 `_config.yml`，关于配置的完整参数介绍和默认值等内容，请查阅官网文档：<https://www.jekyll.com.cn/docs/configuration/>
 
+以下是我的网站配置示例，以供参考：
 ```yml
 # 以下为自定义的全局变量，可以在 HTML 文件中引用，
 # 比如代码：<h1>{{ site.title }}</h1> 
@@ -65,9 +66,11 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - COPYING
 sass:
   style: compressed
 future: true
+permalink: /:year/:month/:day/:title
 theme: jekyll-theme-slate
 ```
 
