@@ -1,7 +1,8 @@
-$(document).ready(function(){
-  $('figure.highlight').each(function(x, r){
-    if ($(r).find('table').length < 1){
-      $(r).find('pre').css('padding', '5px');
-    }
-  });
-});
+var postContent = document.querySelector('#post-content');
+var imgs = postContent.querySelectorAll('img');
+var len = imgs.length;
+
+for (let i = 0; i < len; i++) {
+    imgs[i].classList.add('materialboxed');
+    imgs[i].classList.add('z-depth-4');
+}
