@@ -3,7 +3,7 @@
         <a href="README.md">简体中文</a> | English
     </div>
     <h1>knightyun.github.io</h1>
-    <p>A responsive [Material](https://material.io/) theme based on[Materialize.css](http://materializecss.com/) for jekyll sites.</p>
+    <p>A responsive personal blog website based on jekyll.</p>
 
 [![license](https://img.shields.io/github/license/knightyun/knightyun.github.io)](https://github.com/knightyun/knightyun.github.io/blob/master/COPYING)
 [![Gitter](https://img.shields.io/gitter/room/knightyun/knightyun.github.i0)](https://gitter.im/knightyun-github-io/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
