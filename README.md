@@ -1,8 +1,8 @@
-<!-- # MatJek -->
-
 <div align="center">
+    <div align="right">
+        简体中文 | <a href="README-EN.md">English</a>
+    </div>
     <h1>knightyun.github.io</h1>
-    <!-- <p>A responsive [Material](https://material.io/) theme based on[Materialize.css](http://materializecss.com/) for jekyll sites.</p> -->
     <p>基于 jekyll 的响应式 Github Pages 个人博客网站</p>
 
 [![license](https://img.shields.io/github/license/knightyun/knightyun.github.io)](https://github.com/knightyun/knightyun.github.io/blob/master/COPYING)
