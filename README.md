@@ -67,6 +67,7 @@ exclude:
   - Gemfile.lock
   - README.md
   - COPYING
+  - vendor
 sass:
   style: compressed
 future: true
