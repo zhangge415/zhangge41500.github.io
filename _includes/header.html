@@ -4,43 +4,48 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="baidu-site-verification" content="X2hsRcRCeh" />
-    <meta name="360-site-verification" content="fa6ca3a9a0330e9cecabee0a9fe1d52a" />
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <!-- 360 -->
+    <meta name="360-site-verification" content="fa6ca3a9a0330e9cecabee0a9fe1d52a" />
     <!-- 搜狗 -->
     <meta name="sogou_site_verification" content="oatSp9uAV5" />
-    <!--熊掌号 new-->
+    <!--熊掌号 -->
     <meta name="baidu-site-verification" content="Wkb0Jzk8yx" />
     <!-- Google Search Console -->
     <meta name="google-site-verification" content="IJrXvaK-Luj-lCGP7tymcCbkcfMKi82Y8V21qN9ZT0s" />
     <title>
         {% if page.title %}
-        {{ page.title | escape }}
+            {{ page.title | escape }}
         {% else %}
-        {{ site.title | escape }}
+            {{ site.title | escape }}
         {% endif %}
     </title>
     <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico">
+    {% if jekyll.environment == 'development' %}
     <link rel="stylesheet" href="/assets/css/materialize.min.css">
-    <!-- <link rel="stylesheet" href="/assets/css/icons.css"> -->
+    <link rel="stylesheet" href="/assets/css/icons.css">
+    {% else %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% endif %}
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/stylesheet.css">
     <link rel="stylesheet" href="/assets/css/bg-animation.css">
     <link rel="stylesheet" href="/assets/css/category.css">
     {% for css in layout.css %}
-    {% if css contains "//" %}
-    <link rel="stylesheet" href="{{css}}">
-    {% else %}
-    <link rel="stylesheet" href="/assets/css/{{css}}">
-    {% endif %}
+        {% if css contains "//" %}
+        <link rel="stylesheet" href="{{css}}">
+        {% else %}
+        <link rel="stylesheet" href="/assets/css/{{css}}">
+        {% endif %}
     {% endfor %}
+
     {% for css in page.css %}
-    {% if css contains "//" %}
-    <link rel="stylesheet" href="{{css}}">
-    {% else %}
-    <link rel="stylesheet" href="/assets/css/{{css}}">
-    {% endif %} 
+        {% if css contains "//" %}
+        <link rel="stylesheet" href="{{css}}">
+        {% else %}
+        <link rel="stylesheet" href="/assets/css/{{css}}">
+        {% endif %} 
     {% endfor %}
     <link rel="stylesheet" href="/assets/css/syntax.css">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
@@ -56,6 +61,7 @@
             </div>
             <div class="nav-wrapper">
                 <div class="container">
+                    {% if jekyll.environment == 'production' %}
                     <div class="github-btns">
                         <iframe src="https://ghbtns.com/github-btn.html?user=knightyun&repo=knightyun.github.io&type=star&count=true"
                         frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
@@ -64,6 +70,7 @@
                         <iframe src="https://ghbtns.com/github-btn.html?user=knightyun&type=follow&count=true"
                         frameborder="0" scrolling="0" width="160px" height="20px"></iframe>
                     </div>
+                    {% endif %}
                     <a class="page-title" href="/">{{site.title}}</a>
                     <p class="head-message">学习&nbsp;&nbsp;总结&nbsp;&nbsp;分享&nbsp;&nbsp;提升</p>
                 </div>
