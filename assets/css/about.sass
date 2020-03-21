@@ -7,6 +7,12 @@
   -o-transition: $args
   transition: $args
 
+@keyframes word-waiting
+  from 
+    border-bottom: 3px solid black
+  to 
+    border-bottom: none
+
 .user-pic
   img
     width: 100px
@@ -15,12 +21,19 @@
 .user-content
   margin-top: 30px
 
-.hidden
-  display: none
+.typing-text
+  font-size: 1.5em
 
-.my-linkedin
-  font-weight: bold
-  color: #008000
+.word-typing
+  display: inline-block
+  width: .5em
+  font-size: 1.5em
+  border-bottom: 3px solid black
+  vertical-align: text-bottom
 
-.linkedin-tag
-  margin-top: 20px
+.word-waiting
+  display: inline-block
+  width: .5em
+  font-size: 1.5em
+  vertical-align: text-bottom
+  animation: word-waiting 1s linear infinite

@@ -1,13 +1,17 @@
-$(document).ready(function(){
-  $('.geopattern').each(function(){
-    $(this).geopattern($(this).data('pattern-id'));
-  });
-});
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.geopattern').forEach(el => {
+        var pattern = GeoPattern.generate(el.dataset.patternId).toDataUrl();
+        el.style.backgroundImage = pattern;
+    })
+})
 
-function toggleForked(){
-  if ($('.fork-switch').prop('checked')) {
-    $('div[id=forked]').removeClass('hidden');
-  } else {
-    $('div[id=forked]').addClass('hidden');
-  }
+function toggleForked() {
+    var forkSwitch = document.querySelector('.fork-switch'),
+        forked = document.querySelector('div[id=forked]');
+
+    if (forkSwitch.checked) {
+        forked.classList.remove('hidden');
+    } else {
+        forked.classList.add('hidden');
+    }
 }
