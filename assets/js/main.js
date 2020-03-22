@@ -1,14 +1,6 @@
 // Materialize 全部插件初始化
 M.AutoInit();
 
-// 初始化侧栏目录插件
-document.addEventListener('DOMContentLoaded', function () {
-    var elemCategory = document.querySelector('#category');
-    M.Sidenav.init(elemCategory, {
-        'edge': 'right'
-    });
-});
-
 // 粒子连线初始化
 Particles.init({
     /*

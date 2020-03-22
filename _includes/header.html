@@ -26,12 +26,9 @@
     <link rel="stylesheet" href="/assets/css/icons.css">
     {% else %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     {% endif %}
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/stylesheet.css">
-    <link rel="stylesheet" href="/assets/css/bg-animation.css">
-    <link rel="stylesheet" href="/assets/css/category.css">
+
     {% for css in layout.css %}
         {% if css contains "//" %}
         <link rel="stylesheet" href="{{css}}">
@@ -47,7 +44,6 @@
         <link rel="stylesheet" href="/assets/css/{{css}}">
         {% endif %} 
     {% endfor %}
-    <link rel="stylesheet" href="/assets/css/syntax.css">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     {% seo title=false %}

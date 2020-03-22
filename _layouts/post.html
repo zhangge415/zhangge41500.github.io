@@ -1,10 +1,21 @@
 ---
-layout: default
-css: ["post.css"]
-js: ["post.js"]
+layout: page
+css: [
+    "page.css",
+    "post.css",
+    "syntax.css",
+    "article-category.css"
+]
+js: [
+    "materialize.min.js",
+    "post.min.js",
+    "particles.min.js",
+    "main.min.js",
+    "search.min.js",
+    "gen-category.min.js"
+]
 ---
 <div id="post-info">
-    <h2 class="page-title white-text">{{page.title}}</h2>
     <ul class="collapsible hoverable" data-collapsible="accordion">
         <li>
             <div class="collapsible-header grey lighten-4">
@@ -60,8 +71,9 @@ js: ["post.js"]
     </div>
 </div>
 <!--百度资源自动提交-->
+{% if jekyll.environment == 'production' %}
 <script>
-    (function () {
+    window.addEventListener('DOMContentLoaded', function () {
         var bp = document.createElement('script');
         var curProtocol = window.location.protocol.split(':')[0];
         if (curProtocol === 'https') {
@@ -71,23 +83,6 @@ js: ["post.js"]
         }
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(bp, s);
-    })();
+    });
 </script>
-
-{% if site.disqus_shortname and page.comments %}
-<div id="disqus_thread"></div>
-<script>
-    var disqus_config = function () {
-        this.page.url = "{{site.url}}{{page.url}}";
-        this.page.identifier = "{{page.id}}";
-    };
-    (function () { // DON'T EDIT BELOW THIS LINE
-        var d = document,
-            s = d.createElement('script');
-        s.src = '//{{site.disqus_shortname}}.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 {% endif %}
