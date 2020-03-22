@@ -101,8 +101,6 @@ Then shell will print a message about open `http://127.0.0.1:4000` in browser to
 
 - [Materialize.css](http://materializecss.com/)：Famous materialize css style library.
 - [GeoPattern](http://btmills.github.io/geopattern/)：Generate intersting backgroud images.
-- [Animate.css](https://daneden.github.io/animate.css/)：Library for animations.
-- [Morphtext](http://morphext.fyianlai.com/)：Let your words moving!
 - [particles.js](https://marcbruederlin.github.io/particles.js/)：Particle lines effect.
 
 ## Reference

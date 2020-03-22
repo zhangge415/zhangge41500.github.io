@@ -92,8 +92,6 @@ bundle exec jekyll s
 
 - [Materialize.css](http://materializecss.com/)：一个不错的样式组件库
 - [GeoPattern](http://btmills.github.io/geopattern/)：格式化生成有趣的背景图
-- [Animate.css](https://daneden.github.io/animate.css/)：动画样式库
-- [Morphtext](http://morphext.fyianlai.com/)：让文字动起来
 - [particles.js](https://marcbruederlin.github.io/particles.js/)：粒子连接效果
 
 ## 参考
