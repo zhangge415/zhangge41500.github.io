@@ -312,13 +312,13 @@ var arr2 = ['a', 'b', 'c'];
  * @type {object.<string, number>}
  */
 var obj1 = {a: 'one', b: 2}
-
+{% raw %}
 /**
  * 指定具体键和类型的对象
  * @type {{a: string, b: number}}
  */
 var obj2 = {a: 'one', b: 2}
-
+{% endraw %}
 /**
  * 指定具体键和类型的命名对象
  * @type {object} obj3
