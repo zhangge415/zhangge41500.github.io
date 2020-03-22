@@ -1,31 +1,35 @@
-# source "https://rubygems.org"
-
-# Hello! This is where you manage which Jekyll version is used to run.
-# When you want to use a different version, change it below, save the
-# file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
+# 这个文件用于管理 Jekyll 运行时需要安装的依赖；
+# 当你想使用某个依赖的另外一个版本时，那么就在下面的配置进行修改；
+# 然后保存该文件，再运行 bundle install 就可以更新相应版本了；
+# 启动 Jekyll 本地服务请使用下面的命令：
 #
 #     bundle exec jekyll serve
 #
-# This will help ensure the proper Jekyll version is running.
-# Happy Jekylling!
+# 下面的配置用于更改 Jekyll 的默认版本：
 # gem "jekyll", "~> 3.8.5"
 
-# This is the default theme for new Jekyll sites. You may change this to anything you like.
+# 这是 Jekyll 网站的默认主题，你可以换成自己喜欢的其它主题：
 # gem "minima", "~> 2.0"
 
-# If you want to use GitHub Pages, remove the "gem "jekyll"" above and
-# uncomment the line below. To upgrade, run `bundle update github-pages`.
+# 另外，如果你使用 GitHub Pages 功能搭建网站的话，
+# 那么请将上面的代码注释掉，换成使用下面的代码：
+
 gem "github-pages", group: :jekyll_plugins
 
-# If you have any plugins, put them here!
+# 需要更新相关依赖版本，请运行命令：bundle update github-pages
+
+# 如果需要使用插件的话，请改变下面的配置：
+#
 # group :jekyll_plugins do
 #   gem "jekyll-feed", "~> 0.6"
 # end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-# gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# Windows 不支持空文件，需要使用下面的包：
+gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# 默认是官方的 ruby 源，可以选择中国的源进行加速：
 # source 'https://gems.ruby-china.com'
 source 'https://rubygems.org'
-# Performance-booster for watching directories on Windows
+
+# Windows 平台中如果频繁改变文件内容，使用下面的包可以提升性能：
 gem 'wdm', '>=0.1.0' if Gem.win_platform?
