@@ -24,7 +24,9 @@ excerpt: 介绍Kali Linux系统如何设置中文以及修复乱码的问题
 切换中文环境之前，需要安装中文语言环境包，直接运行以下命令：
 ```sh
 sudo dpkg-reconfigure locales
-(sudo dpkg-reconfigure --force locales)
+
+# 上面的运行不成功可以尝试下面这条命令：
+sudo dpkg-reconfigure --force locales
 ```
 
 如果提示类似 `locales` 未找到这样的信息，那么就先运行 `apt install locales` 执行安装，然后再运行上面的命令，顺利的话会弹出一个对话框，选择需要安装的语言，因为中文包是 `z` 开头的，列表又是按字母顺序排列，所以使用方向箭头向下浏览到靠近底端位置，应该能看见这样一个选项：
