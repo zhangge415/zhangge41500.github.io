@@ -36,6 +36,7 @@ exclude:
   - vendor
 sass:
   style: compressed
+lang: zh_CN
 future: true
 permalink: /:year/:month/:day/:title
 theme: jekyll-theme-slate
