@@ -63,7 +63,7 @@ tags: windows 登录 黑屏 事件查看 日志
 
 继续浏览，不出所料，处理和解决 Windows 大部分故障或问题的场景，几乎都能见到 **注册表** 的身影，不过确实注册表这东西和 Windows 系统关系相当紧密，你在 Windows 中执行的大部分可见甚至不可见的操作，几乎都一项注册表项值与之关联；关于注册表的解决方案中基本都提到修改同一个地方（大部分是让下载或者新建一个注册表文件，然后双击导入系统，其实大可不必这样复杂）：
 
-```ssh
+```
 HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000
 
 HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001
@@ -207,7 +207,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-0
 
 两个错误事件相同，从下方信息栏中没有发现特别有用的信息，只有一行主要信息：
 
-```sh
+```
 服务器 {784E29F4-5EBE-4279-9948-1E8FE941646D} 没有在要求的超时时间内向 DCOM 注册。
 ```
 
