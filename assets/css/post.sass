@@ -86,6 +86,17 @@ main
           background-color: #616161
         @include transition(all .3s ease-in-out)
 
+  #post-content
+    table, th, td
+      border: 1px solid #ccc
+    table
+      thead
+        tr
+          background: #e7e8e9
+      tbody
+        tr:nth-child(2n + 1)
+          background: #f7f7f7
+
 @media only screen and (max-width: 992px)
   main
     #post-info
