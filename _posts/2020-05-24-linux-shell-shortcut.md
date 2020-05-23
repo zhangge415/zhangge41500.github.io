@@ -77,5 +77,5 @@ excerpt: 分类介绍 Linux 终端中一些常用操作的快捷键
 
 
 参考链接：
-> - https://linuxtoy.org/archives/bash-shortcuts.html
-> - https://github.com/hokein/Wiki/wiki/Bash-Shell%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE
+> - <https://linuxtoy.org/archives/bash-shortcuts.html>
+> - <https://github.com/hokein/Wiki/wiki/Bash-Shell%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE>
