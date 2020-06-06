@@ -1,3 +1,9 @@
+/**
+ * 网站文章内容搜索功能实现
+ * Copyright (C) 2020 knightyun. <https://github.com/knightyun/knightyun.github.io/assets/js/search.js>
+ * @todo 多关键词搜索
+ */
+
 // 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
 var searchBox = document.querySelector('.search');
 var searchBtn = document.querySelector('.search-start');

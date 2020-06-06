@@ -1,3 +1,7 @@
+/**
+ * 文章页面生成侧栏目录
+ * Copyright (C) 2020 knightyun. <https://github.com/knightyun/knightyun.github.io/assets/js/gen-category.js>
+ */
 var categories = postContent.querySelectorAll('h1, h2, h3, h4, h5, h6');
 
 if (categories.length > 0) { // 文章存在标题
