@@ -1,5 +1,9 @@
 ---
 ---
+@font-face
+  font-family: 'Source Code Pro'
+  src: url(/assets/fonts/SourceCodePro-Regular.ttf)
+
 @mixin transition($args...)
   -webkit-transition: $args
   -moz-transition: $args
@@ -48,6 +52,7 @@ main
     border-left-color: #d2d2d2
     overflow: hidden
   code
+    font-family: consolas, 'Source Code Pro'
     &.language-plaintext
       padding: .2em
       border-radius: .2em
