@@ -15,3 +15,11 @@ document.addEventListener('DOMContentLoaded', function () {
         'edge': 'right'
     });
 });
+
+// 选中文章内容并复制
+document.addEventListener('keyup', e => {
+    if (e.key === 'A' && e.ctrlKey && e.shiftKey) {
+        getSelection().selectAllChildren(postContent);
+        document.execCommand('copy');
+    }
+})
