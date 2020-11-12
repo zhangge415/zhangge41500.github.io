@@ -2,4 +2,4 @@
 layout: page
 title: "留言板"
 ---
-{% include comments.html %}
+{% include message.html %}

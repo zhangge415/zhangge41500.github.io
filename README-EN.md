@@ -28,6 +28,7 @@
 - Show your GitHub repository fantastically | [Preview](https://knightyun.github.io/projects)
 - Archive your articles with categories and tags | [Preview](https://knightyun.github.io/categories)
 - Support search articles with key words | [Preview](https://knightyun.github.io)
+- Article comment and site message board | [Preview](https://knightyun.github.io/message)
 - Customized “About” page | [Preview](https://knightyun.github.io/about)
 
 ## Usage
@@ -102,6 +103,7 @@ Then shell will print a message about open `http://127.0.0.1:4000` in browser to
 - [Materialize.css](http://materializecss.com/)：Famous materialize css style library.
 - [GeoPattern](http://btmills.github.io/geopattern/)：Generate intersting backgroud images.
 - [particles.js](https://marcbruederlin.github.io/particles.js/)：Particle lines effect.
+- [Valine](https://valine.js.org/)：Blog article comment plugin.
 
 ## Reference
 

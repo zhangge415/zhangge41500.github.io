@@ -28,6 +28,7 @@
 - 个性化自动展示 GitHub 项目 | [预览](https://knightyun.github.io/projects)
 - 文章按类别与标签归档展示 | [预览](https://knightyun.github.io/categories)
 - 支持搜索框，按关键词搜索全站文章 | [预览](https://knightyun.github.io)
+- 文章评论与留言板功能 | [预览](https://knightyun.github.io/message)
 - 生动的 “关于” 页面 | [预览](https://knightyun.github.io/about)
 
 ## 使用
@@ -93,6 +94,7 @@ bundle exec jekyll s
 - [Materialize.css](http://materializecss.com/)：一个不错的样式组件库
 - [GeoPattern](http://btmills.github.io/geopattern/)：格式化生成有趣的背景图
 - [particles.js](https://marcbruederlin.github.io/particles.js/)：粒子连接效果
+- [Valine](https://valine.js.org/)：博客评论插件
 
 ## 参考
 
