@@ -6,7 +6,7 @@ tags: git 大小写 ignorecase
 excerpt: 关于 git 中的文件名大小写识别问题与解决方法
 ---
 首先，Windows 下 git 默认配置是对文件/文件夹名称的大小写不敏感：
-```sh
+```shell
 git config --get core.ignorecase
 
 # true
@@ -25,19 +25,19 @@ git config --get core.ignorecase
 因此，如果检出其他分支或者其他协作者拉取代码，项目就会报错，因为一个本地文件的名称如果由小写变成了大写，使用这个文件的代码部分也改成了大写，推送到远程后，远程的这个文件依然是小写，但远程上使用该文件的代码却成功变成了大写，那边启动项目就多半会提示文件不存在了；
 
 对于这种情况 git 提供了一种规范的做法，使用 `git mv` 命令：
-```sh
+```shell
 git mv test.txt TEST.txt
 ```
 
 以此来实现对文件的重命名，同时 git 也会将其识别为 `Rename` 的变更类型，然后正常提交推送就能同步到远程仓库了；如果是重命名文件夹，由于 Windows 下对文件夹的大小写也不敏感（-_-），所以直接使用上面的方法会失败：
-```sh
+```shell
 git mv test-dir TEST-DIR
 
 # Rename from 'test-dir' to 'Test-dir/test-dir' failed.
 ```
 
 这里就只有迂回一下，先把文件夹命名成其他名称，然后再命名为大写就行了：
-```sh
+```shell
 git mv test-dir tmp
 git mv tmp TEST-DIR
 ```
@@ -46,7 +46,7 @@ git mv tmp TEST-DIR
 ### 修改配置
 
 可以选择直接修改 git 配置为不忽略大小写：
-```sh
+```shell
 git config core.ignorecase false
 ```
 
@@ -59,7 +59,7 @@ Aborting
 ```
 
 这种情况下依然需要使用一些迂回的办法，就是先把要重命名的文件改成其他临时名称，提交一次（`git commit`），然后再把临时名称改成想要的名称，再提交一次，最后推送到远程，这样本地和远程都只保留下一个文件了；
-```sh
+```shell
 # rename test.txt --> tmp
 git add .
 git commit -m "..."
