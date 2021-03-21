@@ -67,7 +67,8 @@ submodule.xxx.active=true
 如果将父项目推送到远程仓库（如 Github），在网页浏览该项目时子模块所在的目录会多一个类似 **`@70c316e`** 的后缀，即上面查看子模块命令输出内容的 hash 值的前面部分，点击这个目录会跳转到这个子模块对应的仓库地址（另一个 url）；
 
 如果执行：
-> `git submodule deinit`
+
+    git submodule deinit
 
 删除了子模块，则再次查看时输出会是这样的：
 ```
