@@ -95,7 +95,7 @@ function loopForever(): never {
 ```
 
 变量也可以直接申明为 `never` 类型，让它永不存在值，其实就是意思就是永远不能给它**赋值**，否则就会报错，这样就可以形成一种保护机制；
-```
+```ts
 let ne: never;
 
 ne = 123; // Error
