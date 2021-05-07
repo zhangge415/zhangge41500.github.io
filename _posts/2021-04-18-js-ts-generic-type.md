@@ -121,7 +121,7 @@ let fn: IGeneric = function(arg) {
 ```
 
 或者是针对整个接口的泛型：
-```
+```ts
 interface IGeneric<T> {
   a: T;
   b: T[];
