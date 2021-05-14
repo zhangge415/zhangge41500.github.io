@@ -4,6 +4,7 @@
     Show forked projects
     <input class="fork-switch" type="checkbox" checked="1" onchange="toggleForked()">
     <span class="lever"></span>
+    <div style="display: none;">{{site.github}}</div>
   </label>
 </div>
 {% for repo in sorted_repos %}
