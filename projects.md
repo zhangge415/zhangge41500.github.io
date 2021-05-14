@@ -7,4 +7,5 @@ js: [
     "projects.min.js"
 ]
 ---
+
 {% include projects.html %}
