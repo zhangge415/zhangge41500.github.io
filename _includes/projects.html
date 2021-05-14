@@ -1,4 +1,4 @@
-{% if site.github.public_repositories != false %}
+{% if site.github.public_repositories %}
 {% assign sorted_repos = (site.github.public_repositories | sort: 'stargazers_count') | reverse  %}
 <div class="col s12 switch">
     <label class="black-text">
@@ -7,6 +7,7 @@
         <span class="lever"></span>
     </label>
 </div>
+
 {% for repo in sorted_repos %}
 <div class="col s12 m6 l4" {% if repo.fork %} id="forked" {% endif %}>
     <div class="card hoverable">
@@ -38,6 +39,4 @@
     </div>
 </div>
 {% endfor %}
-{% else %}
-<div></div>
 {% endif %}
