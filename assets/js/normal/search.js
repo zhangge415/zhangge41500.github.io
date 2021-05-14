@@ -111,8 +111,20 @@ function searchInit() {
  * @param {string}   input       - 搜索内容
  */
 function searchMatching(arrTitles, arrContents, input) {
-    // 转换为正则表达式，忽略输入大小写
-    var inputReg = new RegExp(input, "i");
+    var inputReg;
+
+    try {
+        // 转换为正则表达式，忽略输入大小写
+        inputReg = new RegExp(input, "i");
+    } catch (_) {
+        var errorInputDiv = tmpDiv.cloneNode(true);
+
+        errorInputDiv.innerHTML =
+            '正则表达式语法错误，特殊符号前考虑加上转义符："&Backslash;"';
+        errorInputDiv.className = "pink-text result-item";
+        elSearchResults.appendChild(errorInputDiv);
+        return;
+    }
 
     // 在所有文章标题、内容中匹配搜索值
     for (i = 0; i < itemLength; i++) {
@@ -159,11 +171,11 @@ function searchMatching(arrTitles, arrContents, input) {
 
     // 未匹配到内容的情况
     if (indexItem.length == 0) {
-        var itemDiv = tmpDiv.cloneNode(true);
+        var noneItemDiv = tmpDiv.cloneNode(true);
 
-        itemDiv.innerText = "未匹配到内容...";
-        itemDiv.className = "teal-text text-darken-3 result-item";
-        elSearchResults.appendChild(itemDiv);
+        noneItemDiv.innerText = "未匹配到内容...";
+        noneItemDiv.className = "teal-text text-darken-3 result-item";
+        elSearchResults.appendChild(noneItemDiv);
     }
 
     // 将所有匹配内容进行组合
