@@ -1,18 +1,18 @@
 /**
  * 网站文章内容搜索功能实现
- * Copyright (C) 2020 knightyun. <https://github.com/knightyun/knightyun.github.io/assets/js/search.js>
+ * Copyright (c) 2020 knightyun. <https://github.com/knightyun/knightyun.github.io/assets/js/search.js>
  * @todo 多关键词搜索
  */
 
 // 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
-var searchBox = document.querySelector('.search');
-var searchBtn = document.querySelector('.search-start');
-var searchClear = document.querySelector('.search-clear');
-var searchInput = document.querySelector('.search-input');
-var searchResults = document.querySelector('.search-results');
+var elSearchBox = document.querySelector(".search"),
+    elSearchBtn = document.querySelector(".search-start"),
+    elSearchClear = document.querySelector(".search-clear"),
+    elSearchInput = document.querySelector(".search-input"),
+    elSearchResults = document.querySelector(".search-results");
 
-// 申明保存文章的标题、链接、内容的数组变量
-var searchValue = '',
+// 声明保存文章的标题、链接、内容的数组变量
+var searchValue = "",
     arrItems = [],
     arrContents = [],
     arrLinks = [],
@@ -20,138 +20,174 @@ var searchValue = '',
     arrResults = [],
     indexItem = [],
     itemLength = 0;
-var tmpDiv = document.createElement('div');
-tmpDiv.className = 'result-item';
+var tmpDiv = document.createElement("div"),
+    tmpAnchor = document.createElement("a");
 
 // ajax 的兼容写法
-var xhr = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
+var xhr = new XMLHttpRequest() || new ActiveXObject("Microsoft.XMLHTTP");
 
+// 获取根目录下 feed.xml 文件内的数据
 xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
         var xml = xhr.responseXML;
-        
-        arrItems = xml.getElementsByTagName('item');
+
+        arrItems = xml.getElementsByTagName("item");
         itemLength = arrItems.length;
-        
+
         // 遍历并保存所有文章对应的标题、链接、内容到对应的数组中
         // 同时过滤掉 HTML 标签
         for (i = 0; i < itemLength; i++) {
-            arrContents[i] = arrItems[i].getElementsByTagName('description')[0].
-                childNodes[0].nodeValue.replace(/<.*?>/g, '');
-            arrLinks[i] = arrItems[i].getElementsByTagName('link')[0].
-                childNodes[0].nodeValue.replace(/<.*?>/g, '');
-            arrTitles[i] = arrItems[i].getElementsByTagName('title')[0].
-                childNodes[0].nodeValue.replace(/<.*?>/g, '');
+            arrContents[i] = arrItems[i]
+                .getElementsByTagName("description")[0]
+                .childNodes[0].nodeValue.replace(/<.*?>/g, "");
+            arrLinks[i] = arrItems[i]
+                .getElementsByTagName("link")[0]
+                .childNodes[0].nodeValue.replace(/<.*?>/g, "");
+            arrTitles[i] = arrItems[i]
+                .getElementsByTagName("title")[0]
+                .childNodes[0].nodeValue.replace(/<.*?>/g, "");
         }
 
         // 内容加载完毕后显示搜索框
-        searchBox.style.display = 'block';
+        elSearchBox.style.display = "block";
     }
-}
-
-// 开始获取根目录下 feed.xml 文件内的数据
-xhr.open('get', '/feed.xml', true);
+};
+xhr.open("get", "/feed.xml", true);
 xhr.send();
 
-searchBtn.onclick = searchConfirm;
-
-// 清空按钮点击函数
-searchClear.onclick = function(){
-    searchInput.value = '';
-    searchResults.style.display = 'none';
-    searchClear.style.display = 'none';
-}
+// 绑定按钮事件
+elSearchBtn.onclick = searchConfirm;
+elSearchClear.onclick = searchClear;
 
 // 输入框内容变化后就开始匹配，可以不用点按钮
 // 经测试，onkeydown, onchange 等方法效果不太理想，
 // 存在输入延迟等问题，最后发现触发 input 事件最理想，
 // 并且可以处理中文输入法拼写的变化
-searchInput.oninput = function () {
+elSearchInput.oninput = function () {
     setTimeout(searchConfirm, 0);
-}
-searchInput.onfocus = function () {
-    searchResults.style.display = 'block';
-}
+};
 
+/** 搜索确认 */
 function searchConfirm() {
-    if (searchInput.value == '') {
-        searchResults.style.display = 'none';
-        searchClear.style.display = 'none';
-    } else if (searchInput.value.search(/^\s+$/) >= 0) {
+    if (elSearchInput.value == "") {
+        searchClear();
+    } else if (elSearchInput.value.search(/^\s+$/) >= 0) {
         // 检测输入值全是空白的情况
         searchInit();
         var itemDiv = tmpDiv.cloneNode(true);
-        itemDiv.innerText = '请输入有效内容...';
-        searchResults.appendChild(itemDiv);
+        itemDiv.innerText = "请输入有效内容...";
+        elSearchResults.appendChild(itemDiv);
     } else {
         // 合法输入值的情况
         searchInit();
-        searchValue = searchInput.value;
-        // 在标题、内容中查找
+        searchValue = elSearchInput.value;
+        // 在标题、内容中匹配搜索值
         searchMatching(arrTitles, arrContents, searchValue);
     }
 }
 
-// 每次搜索完成后的初始化
+/** 搜索清空 */
+function searchClear() {
+    elSearchInput.value = "";
+    elSearchClear.style.display = "none";
+    elSearchResults.style.display = "none";
+    elSearchResults.classList.remove("result-item");
+}
+
+/** 每次搜索完成后的初始化 */
 function searchInit() {
     arrResults = [];
     indexItem = [];
-    searchResults.innerHTML = '';
-    searchResults.style.display = 'block';
-    searchClear.style.display = 'block';
+    elSearchResults.innerHTML = "";
+    elSearchClear.style.display = "block";
+    elSearchResults.style.display = "block";
+    elSearchResults.classList.add("result-item");
 }
 
-function searchMatching(arr1, arr2, input) {
-    // 忽略输入大小写
-    input = new RegExp(input, 'i');
-    // 在所有文章标题、内容中匹配查询值
+/**
+ * 匹配搜索内容
+ * @param {string[]} arrTitles   - 所有文章标题
+ * @param {string[]} arrContents - 所有文件内容
+ * @param {string}   input       - 搜索内容
+ */
+function searchMatching(arrTitles, arrContents, input) {
+    // 转换为正则表达式，忽略输入大小写
+    var inputReg = new RegExp(input, "i");
+
+    // 在所有文章标题、内容中匹配搜索值
     for (i = 0; i < itemLength; i++) {
-        if (arr1[i].search(input) !== -1 || arr2[i].search(input) !== -1) {
+        var titleIndex = arrTitles[i].search(inputReg);
+        var contentIndex = arrContents[i].search(inputReg);
+        var resultIndex, resultArr;
+
+        if (titleIndex !== -1 || contentIndex !== -1) {
             // 优先搜索标题
-            if (arr1[i].search(input) !== -1) {
-                var arr = arr1;
+            if (titleIndex !== -1) {
+                resultIndex = titleIndex;
+                resultArr = arrTitles;
             } else {
-                var arr = arr2;
+                resultIndex = contentIndex;
+                resultArr = arrContents;
             }
-            indexItem.push(i);  // 保存匹配值的索引
-            var indexContent = arr[i].search(input);
-            // 此时 input 为 RegExp 格式 /input/i，转换为原 input 字符串长度
-            var l = input.toString().length - 3;
+
+            // 保存匹配值的索引
+            indexItem.push(i);
+
+            var len = resultArr[i].match(inputReg)[0].length;
             var step = 10;
-            
+
             // 将匹配到内容的地方进行黄色标记，并包括周围一定数量的文本
-            arrResults.push(arr[i].slice(indexContent - step, indexContent) +
-                '<mark>' + arr[i].slice(indexContent, indexContent + l) + '</mark>' +
-                arr[i].slice(indexContent + l, indexContent + l + step));
+            arrResults.push(
+                resultArr[i].slice(resultIndex - step, resultIndex) +
+                    "<mark>" +
+                    resultArr[i].slice(resultIndex, resultIndex + len) +
+                    "</mark>" +
+                    resultArr[i].slice(
+                        resultIndex + len,
+                        resultIndex + len + step
+                    )
+            );
         }
     }
 
     // 输出总共匹配到的数目
     var totalDiv = tmpDiv.cloneNode(true);
-    totalDiv.innerHTML = '总匹配：<b>' + indexItem.length + '</b> 项';
-    searchResults.appendChild(totalDiv);
+
+    totalDiv.className = "result-title";
+    totalDiv.innerHTML = "总匹配：<b>" + indexItem.length + "</b> 项";
+    elSearchResults.appendChild(totalDiv);
 
     // 未匹配到内容的情况
     if (indexItem.length == 0) {
         var itemDiv = tmpDiv.cloneNode(true);
-        itemDiv.innerText = '未匹配到内容...';
-        searchResults.appendChild(itemDiv);
+
+        itemDiv.innerText = "未匹配到内容...";
+        itemDiv.className = "teal-text text-darken-3 result-item";
+        elSearchResults.appendChild(itemDiv);
     }
 
     // 将所有匹配内容进行组合
     for (i = 0; i < arrResults.length; i++) {
         var itemDiv = tmpDiv.cloneNode(true);
-        itemDiv.innerHTML = '<b>《' + arrTitles[indexItem[i]] +
-            '》</b><hr />' + arrResults[i];
-        itemDiv.setAttribute('onclick', 'changeHref(arrLinks[indexItem[' + i + ']])');
-        searchResults.appendChild(itemDiv);
+        var itemTitleDiv = tmpDiv.cloneNode(true);
+        var itemDetailDiv = tmpDiv.cloneNode(true);
+        var itemDetailDivAnchor = tmpAnchor.cloneNode(true);
+
+        itemDiv.className = "card hoverable result-item";
+        itemTitleDiv.className = "card-content result-item-title";
+        itemDetailDiv.className = "card-action result-item-detail";
+        itemDetailDivAnchor.className = "blue-text";
+
+        itemTitleDiv.innerText = arrTitles[indexItem[i]];
+        itemDetailDivAnchor.innerHTML = arrResults[i];
+        itemDetailDivAnchor.href = arrLinks[indexItem[i]];
+
+        itemDiv.appendChild(itemTitleDiv);
+        itemDetailDiv.appendChild(itemDetailDivAnchor);
+        itemDiv.appendChild(itemDetailDiv);
+
+        elSearchResults.appendChild(itemDiv);
     }
 }
 
-function changeHref(href) {
-    // 在当前页面点开链接的情况
-    location.href = href;
-
-    // 在新标签页面打开链接的代码，与上面二者只能取一个，自行决定
-    // window.open(href);
-}
+window.addEventListener("load", searchClear);
