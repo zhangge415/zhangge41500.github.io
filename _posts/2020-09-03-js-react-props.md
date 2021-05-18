@@ -142,6 +142,7 @@ class Child extends React.Component {
 export default Parent;
 ```
 
+
 ## 子级传向父级
 
 React 中似乎没有提供子级向父级直接传值，类似 `props` 的方法或途径，可以通过一些间接手段实现，开发中常见的处理方式就是子组件调用父组件通过 `props` 传入的处理函数，对需要传递的值进行处理；例如：
@@ -196,6 +197,7 @@ export default Parent;
 - 子组件通过 `this.props` 调用父组件传入的处理函数，并将要传递的值作为该函数的参数；
 - 处理函数开始执行，由于其是在父组件的作用域中声明的，所以也能访问父组件中的一些数据，比如 `state`，相当于在父组件中处理子组件传入的数据；
 - 处理函数更新 state 状态值，随后其他访问该 state 的地方也会随即更新；
+
 
 ## 同级间传递
 
@@ -278,3 +280,38 @@ export default Parent;
 ```
 
 在页面上点击按钮后，前面的文本同样会发生改变，即 DOM 元素的元素属性 `innerText` 值被成功修改，如需使用其他原生属性或方法同理；
+
+### Refs 转发
+
+虽然 `Refs` 提供了直接访问组件或元素的途径，但是它却访问不了**组件中的组件**，这是 React 层故意为之，隐藏组件实现细节与渲染结果，防止组件的 DOM 结构被过度依赖；但有一些特殊情况下确实需要访问组件内部的组件的话，React 也提供了另外一种机制，即 **Refs 转发（Refs Forwarding）**；顾名思义，组件 A 不能直接使用 `ref` 访问组件 B 中的组件 C，但是可以通过组件 B 转发 `ref` 给组件 C，这里改造一下上面 `Refs` 中的例子，我们在 `<Parent />` 和 `<span>` 之间再加一层组件，再实现对其的操作：
+```jsx
+class Parent extends React.Component {
+    myRef = React.createRef();
+    
+    handleClick(msg) {
+        this.myRef.current.innerText = msg;
+    }
+    
+    render() {
+        // 对子组件正常使用 ref
+        return (
+            <Child
+                ref={this.myRef}
+                handleClick={this.handleClick.bind(this)}
+            />
+        );
+    }
+}
+
+// 使用 React.forwardRef 方法转发 ref 给下一层组件
+const Child = React.forwardRef((props, ref) => {
+    return (<>
+        <span ref={ref}>hello</span>
+        <button
+            onClick={() => props.handleClick('world')}
+        >Change</button>
+    </>);
+});
+```
+
+Refs 转发需要使用 `React.forwardRef()` 方法创造组件，该方法接收一个回调函数做为参数，该回调函数接收两个入参，第一个是传进组件的 `props`，第二个是传进组件的的 `ref`，通过内部逻辑决定 `ref` 再转发给谁，回调函数的返回值是最终生成的组件；页面加载组件后，点击按钮，就能像直接使用 `ref` 一样改变展示的文本值了；
