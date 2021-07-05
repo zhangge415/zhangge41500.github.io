@@ -11,7 +11,72 @@ excerpt: 分析与解决 flex 盒子在 Chrome 和 Safari 中的行为差异问�
 
 ## 复现
 
-下面将问题简化为了一个 **demo** 模型，一个定高 `300px` 的 `flex` 盒子 A（红色边框），嵌套了另一个高度被子元素（绿色块）撑开的 `flex` 盒子 B（蓝色边框），其中盒子 B 为垂直伸缩 `flex-direction: column;`，Footer 元素（绿色边框）高度固定 `100px`，背景半透明：
+下面将问题简化为了一个 **demo** 模型，一个定高 `300px` 的 `flex` 盒子 A（红色边框），嵌套了另一个高度被子元素（绿色块）撑开的 `flex` 盒子 B（蓝色边框），其中盒子 B 为垂直伸缩 `flex-direction: column;`，Footer 元素（绿色边框）高度固定 `100px`，背景半透明；代码：
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Demo</title>
+        <style>
+            .flex-box-a {
+                display: flex;
+                width: 300px;
+                height: 300px;
+                flex-direction: column;
+                border: 2px solid red;
+            }
+            .flex-box-b {
+                display: flex;
+                width: 200px;
+                height: auto;
+                border: 2px solid blue;
+            }
+            .inner-green-box {
+                width: 100px;
+                height: 100px;
+                background: green;
+            }
+            .inner-aqua-box {
+                width: 100px;
+                height: 100px;
+                background: aqua;
+            }
+            .footer-box {
+                width: 200px;
+                height: 100px;
+                border: 2px solid lime;
+                background: skyblue;
+                opacity: .5;
+            }
+            .bottom-brown-box {
+                width: 304px;
+                height: 100px;
+                color: white;
+                background: burlywood;
+            }
+        </style>
+    </head>
+    <body>
+        Flex Box A - height: 300px;
+        <div class="flex-box-a">
+            Flex Box B - height: auto;
+            <div class="flex-box-b">
+                <div class="inner-green-box">height: 100px;</div>
+                <div class="inner-aqua-box"></div>
+            </div>
+            <div class="footer-box">Footer - height: 100px;</div>
+        </div>
+        <div class="bottom-brown-box">
+            height: 100px;
+        </div>
+    </body>
+</html>
+```
+
+效果：
 
 ![1](https://img-blog.csdnimg.cn/20210705143709768.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0tOSUdIX1lVTg==,size_16,color_FFFFFF,t_70#pic_center)
 
