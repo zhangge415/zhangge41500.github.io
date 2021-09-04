@@ -1,7 +1,7 @@
 ---
 title: 手机端（安卓）安装 Kali Linux 系统详细教程
 layout: post
-categories: Linux
+categories: Exploit
 tags: Kali Linux 手机
 excerpt: 关于安卓端安装 Kali Linux 的详细教程
 ---
