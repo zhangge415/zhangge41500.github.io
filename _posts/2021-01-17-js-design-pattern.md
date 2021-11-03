@@ -341,7 +341,7 @@ class Publisher {
     // 删除指定频道
     deleteChannel(channel) {
         if (this.channels[channel] !== undefined) {
-            delete this.channels[channel]
+            delete this.channels[channel];
         } else {
             console.log('Channel not exist!');
         }
