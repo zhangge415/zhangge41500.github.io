@@ -334,14 +334,14 @@ class Publisher {
         if (this.channels[channel] !== undefined) {
             console.log('Channel existed!');
         } else {
-            this.channels.push(channel);
+            this.channels[chanel] = [];
         }
     }
 
     // 删除指定频道
     deleteChannel(channel) {
         if (this.channels[channel] !== undefined) {
-            this.channels.splice(this.channels.indexOf(channel), 1);
+            delete this.channels[channel]
         } else {
             console.log('Channel not exist!');
         }
