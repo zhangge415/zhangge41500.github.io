@@ -20,9 +20,10 @@ gem "github-pages", group: :jekyll_plugins
 
 # 如果需要使用插件的话，请改变下面的配置：
 #
-# group :jekyll_plugins do
+group :jekyll_plugins do
 #   gem "jekyll-feed", "~> 0.6"
-# end
+    gem "jekyll-admin"
+end
 
 # Windows 不支持空文件，需要使用下面的包：
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
