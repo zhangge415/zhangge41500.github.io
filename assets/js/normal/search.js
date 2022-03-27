@@ -213,11 +213,11 @@ function searchMatching(arrTitles, arrContents, input) {
 window.addEventListener("load", searchClear);
 
 // 搜索快捷键
-document.onkeydown = function(evt) {
+document.addEventListener('keydown', function(evt) {
     if (isSearchFocused) return;
     if (evt.key === '/') {
         evt.preventDefault();
         elSearchInput.focus();
         window.isSearchFocused = true;
     }
-}
+})
