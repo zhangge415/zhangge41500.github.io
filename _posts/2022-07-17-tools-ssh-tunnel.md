@@ -20,7 +20,7 @@ SSH 协议是 Linux 系统中使用较为频繁的协议之一，通常用于远
 在验证 IP 地址和多级代理的场景时，会额外用到网关机器：`192.168.111.1`。
 
 然后再多了解一下三个 ssh 的命令行参数，后面会用到：
-```txt
+```
 -N    建立连接后不远程执行命令，也没有交互shell，通常用于端口转发的场景。
 -f    建立连接后会在后台运行进程，不占用前台窗口。
 -c    传输数据时对数据进行压缩，压缩算法和 gzip 的一样，但不适用于高速网络环境，会降低连接速度。
@@ -32,7 +32,7 @@ SSH 协议是 Linux 系统中使用较为频繁的协议之一，通常用于远
 ### 原理
 
 本地转发即使用 `ssh -L` 参数，先看一下官方解释（`man ssh`）：
-```txt
+```
      -L [bind_address:]port:host:hostport
      -L [bind_address:]port:remote_socket
      -L local_socket:host:hostport
@@ -85,7 +85,7 @@ Centos 这边也记录到了相应的连接日志，本地转发**成功**：
 ### 原理
 
 远程转发的执行参数是 `ssh -R`，官方的解释是：
-```txt
+```
      -R [bind_address:]port:host:hostport
      -R [bind_address:]port:local_socket
      -R remote_socket:host:hostport
@@ -177,7 +177,7 @@ ssh -NR 1080 root@192.168.111.131
 ### 原理
 
 动态转发的执行参数是 `ssh -D`，官方解释是：
-```txt
+```
      -D [bind_address:]port
              Specifies a local “dynamic” application-level port forwarding.  This works by allocating a socket to
              listen to port on the local side, optionally bound to the specified bind_address.  Whenever a connection
@@ -218,7 +218,7 @@ ssh -ND 1080 root@192.168.111.131
 ### 原理
 
 实现多级代理需要用到 `ssh -J` 参数，即设置 `Jump host`，可理解为跳板，官方解释为：
-```txt
+```
      -J destination
              Connect to the target host by first making a ssh connection to the jump host described by destination
              and then establishing a TCP forwarding to the ultimate destination from there.  Multiple jump hops may
