@@ -866,6 +866,10 @@ Linux 系统启动完毕，接下来就是进入图形桌面环境，当然，�
 
 ![Screenshot_20191211_184556_studio.com.techriz.andronix.jpg](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMjAvMDEvMTAvdjZyRlR5dWs0aURFTUNHLmpwZw?x-oss-process=image/format,png)
 
+> AndroNix 可能部分机型存在**不兼容**的情况，这里直接贴出这个软件复制到剪切板的内容，下一个步骤粘贴即可：
+>
+> echo "deb https://termux.mentality.rip/termux-main stable main" > $PREFIX/etc/apt/sources.list && cat $PREFIX/etc/apt/sources.list && pkg update -y && pkg install wget curl proot tar -y && wget https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Installer/Kali/kali-xfce.sh -O kali-xfce.sh && chmod +x kali-xfce.sh && bash kali-xfce.sh
+
 然后我们切换到 **Termux** 这个软件，长按粘贴刚才复制的代码，内容如下：
 
 ![Screenshot_20191211_184637_com.termux.jpg](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMjAvMDEvMTAvZkJieEt2U0g2VnVuTGNsLmpwZw?x-oss-process=image/format,png)
