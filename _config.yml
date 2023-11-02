@@ -41,6 +41,7 @@ exclude:
   - README.md
   - COPYING
   - vendor
+  - minify.cmd
 sass:
   style: compressed
 lang: zh_CN
